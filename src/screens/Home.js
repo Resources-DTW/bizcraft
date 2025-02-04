@@ -48,30 +48,57 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const [startCount, setStartCount] = useState(false);
-  const statsRef = useRef(null);
+  const [startCountTop, setStartCountTop] = useState(false);
+  const [startCountBottom, setStartCountBottom] = useState(false);
+  const statsTopRef = useRef(null);
+  const statsBottomRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setStartCount(true);
+            setStartCountTop(true);
           } else {
-            setStartCount(false);
+            setStartCountTop(false);
           }
         });
       },
       { threshold: 0.5 }
     );
 
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
+    if (statsTopRef.current) {
+      observer.observe(statsTopRef.current);
     }
 
     return () => {
-      if (statsRef.current) {
-        observer.unobserve(statsRef.current);
+      if (statsTopRef.current) {
+        observer.unobserve(statsTopRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setStartCountBottom(true);
+          } else {
+            setStartCountBottom(false);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (statsBottomRef.current) {
+      observer.observe(statsBottomRef.current);
+    }
+
+    return () => {
+      if (statsBottomRef.current) {
+        observer.unobserve(statsBottomRef.current);
       }
     };
   }, []);
@@ -231,7 +258,7 @@ export default function Home() {
           </Button>
           <div
             style={{ display: "flex", justifyContent: "space-between" }}
-            ref={statsRef}
+            ref={statsTopRef}
           >
             <div className="stat-item">
               <p
@@ -251,7 +278,7 @@ export default function Home() {
                   marginTop: 0,
                 }}
               >
-                <CountUp start={0} end={startCount ? 45 : 0} duration={2} />+
+                <CountUp start={0} end={startCountTop ? 45 : 0} duration={2} />+
               </p>
             </div>
             <div className="stat-item">
@@ -272,7 +299,7 @@ export default function Home() {
                   marginTop: 0,
                 }}
               >
-                <CountUp start={0} end={startCount ? 30 : 0} duration={2} />+
+                <CountUp start={0} end={startCountTop ? 30 : 0} duration={2} />+
               </p>
             </div>
             <div className="stat-item">
@@ -293,7 +320,7 @@ export default function Home() {
                   marginTop: 0,
                 }}
               >
-                <CountUp start={0} end={startCount ? 3 : 0} duration={2} />+
+                <CountUp start={0} end={startCountTop ? 3 : 0} duration={2} />+
               </p>
             </div>
           </div>
@@ -798,6 +825,9 @@ export default function Home() {
 
       <div
         style={{
+          display: "flex",
+          justifyContent: "space-around",
+          padding: "3%",
           background: `
             linear-gradient(90deg, 
               rgba(9, 5, 55, 1) 0%,   /* Blue on the left */
@@ -806,99 +836,91 @@ export default function Home() {
             )
           `,
         }}
+        ref={statsBottomRef}
       >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            padding: "3%",
-          }}
-          ref={statsRef}
-        >
-          <div className="stat-item">
-            <p
-              style={{
-                fontSize: 80,
-                fontWeight: 700,
-                color: "#FFFFFF",
-                margin: 0,
-              }}
-            >
-              <CountUp start={0} end={startCount ? 100 : 0} duration={2} />+
-            </p>
-            <p
-              style={{
-                fontSize: 20,
-                fontWeight: 400,
-                color: "#FFFFFF",
-              }}
-            >
-              Successful Projects
-            </p>
-          </div>
-          <div className="stat-item">
-            <p
-              style={{
-                fontSize: 80,
-                fontWeight: 700,
-                color: "#FFFFFF",
-                margin: 0,
-              }}
-            >
-              <CountUp start={0} end={startCount ? 8 : 0} duration={2} />+
-            </p>
-            <p
-              style={{
-                fontSize: 20,
-                fontWeight: 400,
-                color: "#FFFFFF",
-              }}
-            >
-              Countries Served
-            </p>
-          </div>
-          <div className="stat-item">
-            <p
-              style={{
-                fontSize: 80,
-                fontWeight: 700,
-                color: "#FFFFFF",
-                margin: 0,
-              }}
-            >
-              <CountUp start={0} end={startCount ? 10 : 0} duration={2} />+
-            </p>
-            <p
-              style={{
-                fontSize: 20,
-                fontWeight: 400,
-                color: "#FFFFFF",
-              }}
-            >
-              Years of Expertise
-            </p>
-          </div>
-          <div className="stat-item">
-            <p
-              style={{
-                fontSize: 80,
-                fontWeight: 700,
-                color: "#FFFFFF",
-                margin: 0,
-              }}
-            >
-              <CountUp start={0} end={startCount ? 95 : 0} duration={2} />%
-            </p>
-            <p
-              style={{
-                fontSize: 20,
-                fontWeight: 400,
-                color: "#FFFFFF",
-              }}
-            >
-              Client Satisfaction
-            </p>
-          </div>
+        <div className="stat-item">
+          <p
+            style={{
+              fontSize: 80,
+              fontWeight: 700,
+              color: "#FFFFFF",
+              margin: 0,
+            }}
+          >
+            <CountUp start={0} end={startCountBottom ? 100 : 0} duration={2} />+
+          </p>
+          <p
+            style={{
+              fontSize: 20,
+              fontWeight: 400,
+              color: "#FFFFFF",
+            }}
+          >
+            Successful Projects
+          </p>
+        </div>
+        <div className="stat-item">
+          <p
+            style={{
+              fontSize: 80,
+              fontWeight: 700,
+              color: "#FFFFFF",
+              margin: 0,
+            }}
+          >
+            <CountUp start={0} end={startCountBottom ? 8 : 0} duration={2} />+
+          </p>
+          <p
+            style={{
+              fontSize: 20,
+              fontWeight: 400,
+              color: "#FFFFFF",
+            }}
+          >
+            Countries Served
+          </p>
+        </div>
+        <div className="stat-item">
+          <p
+            style={{
+              fontSize: 80,
+              fontWeight: 700,
+              color: "#FFFFFF",
+              margin: 0,
+            }}
+          >
+            <CountUp start={0} end={startCountBottom ? 10 : 0} duration={2} />+
+          </p>
+          <p
+            style={{
+              fontSize: 20,
+              fontWeight: 400,
+              color: "#FFFFFF",
+            }}
+          >
+            Years of Expertise
+          </p>
+        </div>
+        <div className="stat-item">
+          <p
+            style={{
+              fontSize: 80,
+              fontWeight: 700,
+              color: "#FFFFFF",
+              margin: 0,
+            }}
+          >
+            <CountUp start={0} end={startCountBottom ? 95 : 0} duration={2} />%
+          </p>
+          <p
+            style={{
+              fontSize: 20,
+              fontWeight: 400,
+              color: "#FFFFFF",
+            }}
+          >
+            Client Satisfaction
+          </p>
         </div>
       </div>
     </div>
