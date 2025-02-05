@@ -1,3 +1,13 @@
+.layer1 {
+  position: absolute;
+  left: 35%;
+  top: 50%;
+}
+.layer2 {
+  position: absolute;
+  left: 38%;
+  top: 50%;
+}
 .stat-item {
   display: flex;
   flex-direction: column;
@@ -11,7 +21,7 @@
   flex-direction: column;
   gap: 20px;
   padding: 10% 10%;
-  width: 80%;
+  width: 100%;
   margin: 0 5%;
   border-radius: 20px;
   background-color: #7453af33;

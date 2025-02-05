@@ -28,11 +28,19 @@ import education from "../assests/education.png";
 import banking from "../assests/banking.png";
 import startup from "../assests/startup.png";
 import travel from "../assests/travel.png";
+import project from "../assests/project.png";
+import enquiry from "../assests/enquiry.png";
+import support from "../assests/support.png";
+import works from "../assests/works.png";
 import CountUp from "react-countup";
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 import "../styles/Home.css";
 import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
+import { BiSolidPhoneCall } from "react-icons/bi";
+import Faq from "../components/Faq";
+import { Form, Input } from "antd";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [isDesktop, setIsDesktop] = useState(true);
@@ -205,16 +213,36 @@ export default function Home() {
     { name: "Travel", icon: travel },
     { name: "Logistic", icon: logistic },
   ];
+  const onFinish = (values) => {
+    console.log("Form Values:", values);
+  };
   return (
     <div>
       <Header />
       <div style={{ display: "flex", margin: "0 5%" }}>
+        <div className="layer1">
+          <svg
+            width="214"
+            height="109"
+            viewBox="0 0 214 109"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              opacity="0.3"
+              d="M1.00014 1.02337C11.6992 6.77818 23.251 5.51691 34.4685 5.92684C49.4381 6.47464 64.5323 10.1996 79.023 16.9223C88.9082 21.5058 100.231 30.655 100.532 44.3737C100.823 57.7412 88.0184 65.7227 79.0532 58.9255C70.0861 52.1299 66.95 35.1158 71.2858 23.5807C75.6215 12.0457 85.7828 6.1775 95.741 6.85082C105.698 7.52156 115.383 13.862 123.734 22.0533C139.093 37.1221 150.578 58.2246 164.181 76.1582C177.786 94.0902 195.414 109.673 213.543 108.055"
+              stroke="white"
+              stroke-miterlimit="10"
+              stroke-dasharray="5 5"
+            />
+          </svg>
+        </div>
         <div
           style={{
             marginTop: "4%",
             display: "flex",
             flexDirection: "column",
-            gap: 20,
+            gap: 30,
           }}
         >
           <p
@@ -611,8 +639,30 @@ export default function Home() {
           backgroundColor: "#11123D",
           display: "flex",
           padding: "5%",
+          position: "relative",
         }}
       >
+        <div className="layer2">
+          <svg
+            width="263"
+            height="163"
+            viewBox="0 0 263 163"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M39.0698 153.125L21.2174 156.429L27.1384 140.056L39.0698 153.125Z"
+              fill="#7453AF"
+            />
+            <path
+              opacity="0.8"
+              d="M36.1853 142.681C46.1165 135.684 50.1533 124.787 55.5355 114.936C62.7187 101.791 72.7994 89.9556 85.2917 79.9997C93.8113 73.207 107.058 67.1696 119.463 73.0345C131.55 78.7508 132.964 93.773 122.876 98.753C112.788 103.735 96.1673 98.9333 87.7881 89.8976C79.4088 80.8619 78.7031 69.1491 83.7578 60.5428C88.8096 51.9365 98.8112 46.1087 109.872 42.3012C130.218 35.3005 154.229 34.4628 176.352 30.3132C198.475 26.1613 220.295 17.3612 226.954 0.421551"
+              stroke="white"
+              stroke-miterlimit="10"
+              stroke-dasharray="5 5"
+            />
+          </svg>
+        </div>
         <div>
           <img
             src={img11}
@@ -663,13 +713,11 @@ export default function Home() {
             goals. Our team is dedicated to delivering innovative and effective
             ways that drive the online presence of your business.
           </p>
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             <div
               style={{
                 display: "flex",
                 gap: 10,
-                alignItems: "center",
-                justifyItems: "center",
               }}
             >
               <svg
@@ -684,7 +732,14 @@ export default function Home() {
                   fill="#7453AF"
                 />
               </svg>
-              <p style={{ fontSize: 20, fontWeight: 600, color: "#FFFFFF" }}>
+              <p
+                style={{
+                  fontSize: 20,
+                  fontWeight: 600,
+                  color: "#FFFFFF",
+                  marginTop: "none",
+                }}
+              >
                 Digital Creative Agency
               </p>
             </div>
@@ -692,8 +747,6 @@ export default function Home() {
               style={{
                 display: "flex",
                 gap: 10,
-                alignItems: "center",
-                justifyItems: "center",
               }}
             >
               <svg
@@ -716,8 +769,6 @@ export default function Home() {
               style={{
                 display: "flex",
                 gap: 10,
-                alignItems: "center",
-                justifyItems: "center",
               }}
             >
               <svg
@@ -830,9 +881,9 @@ export default function Home() {
           padding: "3%",
           background: `
             linear-gradient(90deg, 
-              rgba(9, 5, 55, 1) 0%,   /* Blue on the left */
-              rgba(255, 255, 255, 0.1) 50%, /* White in the center */
-              rgba(9, 5, 55, 1) 100%  /* Blue on the right */
+              rgba(9, 5, 55, 1) 0%, 
+              rgba(255, 255, 255, 0.1) 50%,
+              rgba(9, 5, 55, 1) 100%  
             )
           `,
         }}
@@ -923,6 +974,366 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      <div
+        style={{
+          margin: "5%",
+          padding: "5%",
+          borderRadius: "40px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          backgroundColor: "#43355D",
+          //       background: `
+          //   linear-gradient(
+          //     90deg,
+          //     rgba(9, 5, 55, 1) -3%,
+          //     rgba(150, 119, 202, 0.5) 30%,
+          //     rgba(255, 255, 255, 0.25) 20%,
+          //     rgba(116, 83, 175, 0.5) 40%,
+          //     rgba(9, 5, 55, 1) 92%
+          //   )
+          // `,
+        }}
+      >
+        <p style={{ fontSize: 34, fontWeight: 600, color: "#FFFFFF" }}>
+          Still Looking For Digital Agency Company?
+        </p>
+        <Button
+          style={{
+            fontSize: 14,
+            fontWeight: 600,
+            backgroundColor: "#FFFFFF",
+            borderRadius: "108px",
+            width: "134px",
+            height: "44px",
+            color: "#020331",
+            borderStyle: "none",
+          }}
+        >
+          <BiSolidPhoneCall style={{ width: "24px", height: "24px" }} />
+          CALL US
+        </Button>
+      </div>
+
+      <div
+        style={{
+          margin: "10% 0%",
+        }}
+      >
+        <p
+          style={{
+            fontSize: 24,
+            fontWeight: 600,
+            color: "#7453AF",
+            letterSpacing: 10,
+            textAlign: "center",
+          }}
+        >
+          FAQ
+        </p>
+        <p
+          style={{
+            fontSize: 34,
+            fontWeight: 600,
+            color: "#FFFFFF",
+            textAlign: "center",
+          }}
+        >
+          Find Answers For Commonly Asked Questions, Here
+        </p>
+        <Faq />
+      </div>
+
+      <div>
+        <p
+          style={{
+            fontSize: 24,
+            fontWeight: 600,
+            color: "#7453AF",
+            letterSpacing: 10,
+            textAlign: "center",
+          }}
+        >
+          OUR WORKS
+        </p>
+        <div
+          style={{
+            margin: "5%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img src={works} width="100%" height="100%" alt="" />
+
+          <Button
+            style={{
+              position: "absolute",
+              zIndex: 1,
+              fontSize: 22,
+              fontWeight: 400,
+              backgroundColor: "transparent",
+              borderRadius: "8px",
+              width: "377px",
+              height: "70px",
+              color: "#FFFFFF",
+              border: "1px solid #FFFFFF",
+            }}
+          >
+            Explore Our Portfolio
+          </Button>
+        </div>
+      </div>
+
+      <div style={{ margin: "10% 0%" }}>
+        <p
+          style={{
+            fontSize: 24,
+            fontWeight: 600,
+            color: "#7453AF",
+            letterSpacing: 10,
+            textAlign: "center",
+          }}
+        >
+          CONTACT US
+        </p>
+        <div
+          style={{
+            margin: "5%",
+            padding: "5% 0%",
+            borderRadius: "40px",
+            backgroundColor: "#11123d",
+          }}
+        >
+          <p
+            style={{
+              fontSize: 34,
+              fontWeight: 600,
+              color: "#FFFFFF",
+              textAlign: "center",
+            }}
+          >
+            Get In Touch
+          </p>
+          <p
+            style={{
+              fontSize: 16,
+              fontWeight: 400,
+              color: "#FFFFFF",
+              lineHeight: "28px",
+              textAlign: "center",
+            }}
+          >
+            Call us today to Grow your business, products and boost your
+            <br /> brand recognition.
+          </p>
+          <div style={{ display: "flex", marginTop: "3%" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 20,
+                margin: "5%",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  gap: 20,
+                  alignItems: "center",
+                  justifyItems: "center",
+                }}
+              >
+                <img src={project} alt="" width="44px" height="44px" />
+                <div>
+                  <p
+                    style={{
+                      fontSize: 18,
+                      fontWeight: 600,
+                      color: "#FFFFFF",
+                      margin: 0,
+                    }}
+                  >
+                    Project Offers
+                  </p>
+                  <p
+                    style={{ fontSize: 16, fontWeight: 400, color: "#FFFFFF" }}
+                  >
+                    info@bizcraft.in
+                  </p>
+                </div>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 20,
+                  alignItems: "center",
+                  justifyItems: "center",
+                }}
+              >
+                <img src={enquiry} alt="" width="44px" height="44px" />
+                <div>
+                  <p
+                    style={{
+                      fontSize: 18,
+                      fontWeight: 600,
+                      color: "#FFFFFF",
+                      margin: 0,
+                    }}
+                  >
+                    For Any Enquiry
+                  </p>
+                  <p
+                    style={{ fontSize: 16, fontWeight: 400, color: "#FFFFFF" }}
+                  >
+                    +91 9790782986
+                  </p>
+                </div>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 20,
+                  alignItems: "center",
+                  justifyItems: "center",
+                }}
+              >
+                <img src={support} alt="" width="44px" height="44px" />
+
+                <div>
+                  <p
+                    style={{
+                      fontSize: 18,
+                      fontWeight: 600,
+                      color: "#FFFFFF",
+                      margin: 0,
+                    }}
+                  >
+                    For Technical Support
+                  </p>
+                  <p
+                    style={{ fontSize: 16, fontWeight: 400, color: "#FFFFFF" }}
+                  >
+                    +91 6381659676
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "#FFFFFF1F",
+                padding: "3%",
+                borderRadius: "24px",
+                boxShadow: "0 8px 16px rgba(0,0,0,0.2)",
+                width: "60%",
+                margin: "0 auto",
+              }}
+            >
+              <Form
+                layout="vertical"
+                onFinish={onFinish}
+                style={{ width: "100%", color: "#FFFFFF" }}
+              >
+                <div style={{ display: "flex", gap: "16px" }}>
+                  <Form.Item
+                    name="firstName"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please enter your first name!",
+                      },
+                    ]}
+                    style={{ flex: 1 }}
+                  >
+                    <Input
+                      placeholder="First Name"
+                      style={{ height: "45px" }}
+                    />
+                  </Form.Item>
+                  <Form.Item
+                    name="lastName"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please enter your last name!",
+                      },
+                    ]}
+                    style={{ flex: 1 }}
+                  >
+                    <Input placeholder="Last Name" style={{ height: "45px" }} />
+                  </Form.Item>
+                </div>
+                <div style={{ display: "flex", gap: "16px" }}>
+                  <Form.Item
+                    name="email"
+                    rules={[
+                      { required: true, message: "Please enter your email!" },
+                      { type: "email", message: "Please enter a valid email!" },
+                    ]}
+                    style={{ flex: 1 }}
+                  >
+                    <Input placeholder="E-mail" style={{ height: "45px" }} />
+                  </Form.Item>
+                  <Form.Item
+                    name="contactNumber"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please enter your contact number!",
+                      },
+                      {
+                        pattern: /^[0-9]+$/,
+                        message: "Only numeric values are allowed!",
+                      },
+                    ]}
+                    style={{ flex: 1 }}
+                  >
+                    <Input
+                      placeholder="Contact Number"
+                      style={{ height: "45px" }}
+                    />
+                  </Form.Item>
+                </div>
+                <Form.Item
+                  name="message"
+                  rules={[
+                    { required: true, message: "Please enter your message!" },
+                  ]}
+                >
+                  <Input.TextArea
+                    rows={4}
+                    placeholder="Message..."
+                    style={{ resize: "none" }}
+                  />
+                </Form.Item>
+                <Form.Item>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    style={{
+                      width: "100%",
+                      height: "50px",
+                      borderRadius: "24px",
+                      backgroundColor: "#7453AF",
+                      border: "none",
+                      fontWeight: 600,
+                      fontSize: 16,
+                    }}
+                  >
+                    SUBMIT
+                  </Button>
+                </Form.Item>
+              </Form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 }

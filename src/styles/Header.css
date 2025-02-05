@@ -3,15 +3,21 @@
 body {
   background-color: #020331;
 }
+html,
+body {
+  background-color: #020331 !important;
+}
+
 .header {
   /* position: sticky;
   top: 0;
   z-index: 1; */
-  background-color: #020331;
+  background-color: #020331 !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1% 5%;
+  width: 100%;
 }
 .header-logo img {
   width: 160px;
@@ -19,11 +25,14 @@ body {
 }
 .header-nav {
   display: flex;
-  gap: 30px;
+  gap: 50px;
 }
 .nav-link {
-  text-decoration: none;
-  color: #ffffff;
+  text-decoration: none !important;
+  color: #ffffff !important;
   font-size: 16px;
   font-weight: 400;
+}
+a {
+  text-decoration: none !important;
 }

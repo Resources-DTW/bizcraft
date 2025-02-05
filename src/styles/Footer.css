@@ -1,0 +1,33 @@
+.email-input::placeholder {
+  color: #ffffff !important;
+}
+.footer-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 0;
+}
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-nav {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 80%;
+  display: flex;
+  gap: 15px;
+}
+.footer-address {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 80%;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}

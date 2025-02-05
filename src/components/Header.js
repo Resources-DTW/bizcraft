@@ -9,11 +9,28 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 const solutionsItems = [
   {
     key: "1",
-    label: (
-      <a target="_blank" rel="noopener noreferrer" href="">
-        1st menu item
-      </a>
-    ),
+    label: "Web Design",
+    path: "/education",
+  },
+  {
+    key: "2",
+    label: "Web Development",
+    path: "/about",
+  },
+  {
+    key: "3",
+    label: "E-Commerce",
+    path: "/contact",
+  },
+  {
+    key: "4",
+    label: "Mobile App",
+    path: "/contact",
+  },
+  {
+    key: "5",
+    label: "Digital Marketing",
+    path: "/contact",
   },
 ];
 
@@ -38,9 +55,9 @@ export default function Header() {
           }}
           onOpenChange={(open) => setSolutionsOpen(open)}
         >
-          <a onClick={(e) => e.preventDefault()}>
-            <Space className="nav-link">
-              Solutions
+          <a onClick={(e) => e.preventDefault()} className="nav-link">
+            <Space>
+              Services
               <span
                 style={{
                   display: "flex",
@@ -54,9 +71,7 @@ export default function Header() {
             </Space>
           </a>
         </Dropdown>
-        {/* <Link to="/services" className="nav-link">
-          Services
-        </Link> */}
+
         <Link to="/blog" className="nav-link">
           Blog
         </Link>
