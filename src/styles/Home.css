@@ -27,6 +27,18 @@
   background-color: #7453af33;
   align-items: center;
 }
+.testimonial-card2 {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 10% 10%;
+  width: 100%;
+  margin: 3%;
+  margin-top: 30%;
+  border-radius: 20px;
+  background-color: #ffffff0f;
+  align-items: center;
+}
 .react-multiple-carousel__arrow::before {
   font-size: 20px;
   color: #1b1b1b !important;
@@ -88,6 +100,79 @@
     font-size: 24px;
   }
 }
+/* .testimonial-arrow {
+  position: absolute;
+  top: 10%;
+  transform: translateY(-50%);
+  background: #7453af;
+  border: none;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonial-arrow-left {
+  left: 50%;
+  top: 0%;
+}
+
+.testimonial-arrow-right {
+  right: 20%;
+  top: 50%;
+} */
+.testimonial-arrow {
+  position: absolute !important;
+  z-index: 10 !important;
+  transform: translateY(-50%);
+  background: #7453af;
+  border: none;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-arrow-left {
+  left: 81%;
+  top: 7%;
+  background: #ffffff1f;
+  color: #ffffff;
+  overflow: visible;
+}
+
+.testimonial-arrow-right {
+  right: 10%;
+  top: 7%;
+}
+
+.react-multi-carousel-list {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 !important;
+}
+.react-multi-carousel-track {
+  display: flex;
+  gap: 0;
+  width: fit-content;
+}
+.carousel-hidden .react-multi-carousel-list {
+  overflow: hidden !important;
+}
+/* .carousel-visible .react-multi-carousel-list {
+  overflow: visible !important;
+} */
 .custom-dots {
   text-align: center;
 }
@@ -113,12 +198,6 @@
   width: 30px;
   height: 8px;
   transition: all 0.3s ease;
-}
-
-.react-multi-carousel-list {
-  /* // width: 100% !important; */
-  margin: 0 auto;
-  padding: 0 !important;
 }
 
 .react-multi-carousel-track {

@@ -12,6 +12,8 @@ import img8 from "../assests/img8.png";
 import img9 from "../assests/img9.png";
 import img10 from "../assests/img10.png";
 import img11 from "../assests/img11.png";
+import img13 from "../assests/img13.png";
+import img14 from "../assests/img14.png";
 import figma from "../assests/figma.png";
 import ps from "../assests/ps.png";
 import xd from "../assests/xd.png";
@@ -163,6 +165,27 @@ export default function Home() {
     );
   };
 
+  const TestimonialLeftArrow = ({ onClick }) => {
+    return (
+      <button
+        className=" testimonial-arrow testimonial-arrow-left"
+        onClick={onClick}
+      >
+        <IoIosArrowRoundBack />
+      </button>
+    );
+  };
+
+  const TestimonialRightArrow = ({ onClick }) => {
+    return (
+      <button
+        className="testimonial-arrow testimonial-arrow-right"
+        onClick={onClick}
+      >
+        <IoIosArrowRoundForward />
+      </button>
+    );
+  };
   const categories = [
     "UI/UX DESIGN",
     "WEB DESIGN",
@@ -213,6 +236,30 @@ export default function Home() {
     { name: "Travel", icon: travel },
     { name: "Logistic", icon: logistic },
   ];
+  const testimonials = [
+    {
+      review:
+        "I can't thank Biz Craft enough for their outstanding service. They transformed my small business into a digital powerhouse with a beautiful website, effective SEO, and a tailored social media strategy. My online sales have never been better!",
+      image: img14,
+      name: "Emily W.",
+      designation: "Marketing Director at ABC Corporation",
+    },
+    {
+      review:
+        "Working with Biz Craft has been a game-changer for our business. Their digital solutions have increased our online presence, improved user engagement, and ultimately boosted our revenue. I highly recommend their expertise!",
+      image: img13,
+      name: "Sarah L.",
+      designation: "Marketing Director at ABC Corporation",
+    },
+    {
+      review:
+        "Our collaboration with Biz Craft has been nothing short of exceptional. Their team's creativity and technical prowess have elevated our digital marketing efforts to new heights. They consistently deliver results beyond our expectations.",
+      image: img14,
+      name: "Dr. James R.",
+      designation: "Marketing Director at ABC Corporation",
+    },
+  ];
+
   const onFinish = (values) => {
     console.log("Form Values:", values);
   };
@@ -425,7 +472,7 @@ export default function Home() {
           >
             We Provide Wide Range Of Digital Services
           </p>
-          <div style={{ width: "75%" }}>
+          <div style={{ width: "75%" }} className="carousel-hidden">
             <Carousel
               dotListClass="custom-dots"
               showDots={!isDesktop}
@@ -879,6 +926,7 @@ export default function Home() {
           display: "flex",
           justifyContent: "space-around",
           padding: "3%",
+          margin: "7% 0%",
           background: `
             linear-gradient(90deg, 
               rgba(9, 5, 55, 1) 0%, 
@@ -975,25 +1023,177 @@ export default function Home() {
         </div>
       </div>
 
+      <div>
+        <div style={{ margin: "5%" }}>
+          <p
+            style={{
+              color: "#7453AF",
+              fontSize: 24,
+              fontWeight: 600,
+              lineHeight: "32px",
+              letterSpacing: 10,
+            }}
+          >
+            TESTIMONIALS
+          </p>
+          <p
+            style={{
+              color: "#FFFFFF",
+              fontSize: 34,
+              fontWeight: 600,
+              lineHeight: "46.3px",
+            }}
+          >
+            What’s Our Client Opinion About{" "}
+            <span
+              style={{
+                color: "#7453AF",
+              }}
+            >
+              Biz Craft
+            </span>
+          </p>
+          <p
+            style={{
+              color: "#FFFFFF",
+              fontSize: 24,
+              fontWeight: 500,
+              opacity: "80%",
+              marginBottom: "-10%",
+            }}
+          >
+            Over 450<sup>+</sup> Satisfied Clients And Growing
+          </p>
+        </div>
+        <div style={{ position: "relative" }} className="carousel-hidden">
+          <Carousel
+            dotListClass="custom-dots"
+            showDots={!isDesktop}
+            swipeable={true}
+            customLeftArrow={isDesktop ? <TestimonialLeftArrow /> : null}
+            customRightArrow={isDesktop ? <TestimonialRightArrow /> : null}
+            additionalTransfrom={0}
+            arrows
+            autoPlaySpeed={3000}
+            centerMode={false}
+            className=""
+            containerClass=""
+            draggable
+            focusOnSelect={false}
+            infinite
+            itemClass="carousel-item-padding"
+            keyBoardControl
+            minimumTouchDrag={80}
+            pauseOnHover
+            renderArrowsWhenDisabled={false}
+            renderButtonGroupOutside={false}
+            renderDotsOutside={false}
+            responsive={{
+              desktop: {
+                breakpoint: {
+                  max: 3000,
+                  min: 1024,
+                },
+                items: 3,
+                partialVisibilityGutter: 40,
+              },
+              mobile: {
+                breakpoint: {
+                  max: 768,
+                  min: 0,
+                },
+                items: 1,
+                partialVisibilityGutter: 40,
+              },
+              tablet: {
+                breakpoint: {
+                  max: 1024,
+                  min: 768,
+                },
+                items: 2,
+                partialVisibilityGutter: 30,
+              },
+            }}
+            rewind={false}
+            rewindWithAnimation={false}
+            rtl={false}
+            shouldResetAutoplay
+            sliderClass=""
+            slidesToSlide={1}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial-card2">
+                <p
+                  style={{
+                    fontSize: 18,
+                    fontWeight: 400,
+                    color: "#FFFFFF",
+                  }}
+                >
+                  {testimonial.review}
+                </p>
+                <div style={{ display: "flex", gap: 10 }}>
+                  <img
+                    src={testimonial.image}
+                    width="70px"
+                    height="70px"
+                    alt={testimonial.name}
+                  />
+                  <div>
+                    <p
+                      style={{
+                        fontSize: 18,
+                        fontWeight: 400,
+                        color: "#FFFFFF",
+                      }}
+                    >
+                      {testimonial.name}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: 14,
+                        fontWeight: 400,
+                        color: "#ffffff",
+                      }}
+                    >
+                      {testimonial.designation}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Carousel>
+        </div>
+      </div>
+
       <div
         style={{
-          margin: "5%",
+          margin: "10% 5%",
           padding: "5%",
           borderRadius: "40px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          backgroundColor: "#43355D",
-          //       background: `
+          // backgroundColor: "#43355D",
+          // background: `
           //   linear-gradient(
           //     90deg,
           //     rgba(9, 5, 55, 1) -3%,
           //     rgba(150, 119, 202, 0.5) 30%,
-          //     rgba(255, 255, 255, 0.25) 20%,
-          //     rgba(116, 83, 175, 0.5) 40%,
+          //     rgba(255, 255, 255, 0.20) 40%,
+          //     rgba(116, 83, 175, 0.5) 60%,
           //     rgba(9, 5, 55, 1) 92%
           //   )
           // `,
+          background: `
+          linear-gradient(
+            135deg, 
+            rgba(116, 83, 175, 0.2) 0%, /* Purple at 70% opacity */
+            rgba(116, 83, 175, 0.4) 40%, /* Lighter Purple */
+            rgba(255, 255, 255, 0.1) 60%, /* Light transparency */
+            rgba(9, 5, 55, 1) 100% /* Deep Blue */
+          )
+        `,
         }}
       >
         <p style={{ fontSize: 34, fontWeight: 600, color: "#FFFFFF" }}>
