@@ -17,35 +17,26 @@ import { FaXTwitter } from "react-icons/fa6";
 export default function Footer() {
   return (
     <>
-      <div style={{ padding: "5%", borderTop: "1px solid #FFFFFF4D" }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            width: "100%",
-          }}
-        >
+      <div className="footer-container">
+        <div className="footer-header">
           <div className="header-logo">
             <img src={headerlogo} alt="logo" />
           </div>
           <div>
-            <p style={{ fontSize: 20, fontWeight: 600, color: "#FFFFFF" }}>
-              Subscribe on
-            </p>
-            <div style={{ display: "flex", gap: 20 }}>
+            <p className="footer-subscribe-text">Subscribe on</p>
+            <div className="footer-subscribe-box">
               <Input
                 placeholder="E-mail to get latest news..."
-                style={{
-                  flex: 1,
-                  width: "300px",
-                  height: "50px",
-                  borderRadius: "24px",
-                  border: "0.8px solid #FFFFFF",
-                  color: "#FFFFFF",
-                  backgroundColor: "transparent",
-                }}
-                className="email-input"
+                // style={{
+                //   flex: 1,
+                //   width: "300px",
+                //   height: "50px",
+                //   borderRadius: "24px",
+                //   border: "0.8px solid #FFFFFF",
+                //   color: "#FFFFFF",
+                //   backgroundColor: "transparent",
+                // }}
+                className="footer-email-input"
               />
               <Button
                 type="primary"
@@ -59,60 +50,40 @@ export default function Footer() {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
-                icon={
-                  <FaArrowRight
-                    style={{ fontSize: "20px", color: "#7453AF" }}
-                  />
-                }
+                icon={<FaArrowRight className="footer-arrow-icon" />}
               />
             </div>
           </div>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginTop: "5%",
-          }}
-        >
-          <div style={{ width: "30%" }}>
+        <div className="footer-content">
+          <div className="footer-section">
             <Link to="/services" className="footer-address">
               <p>
-                <MdLocationOn style={{ width: "30px", height: "30px" }} />
+                <MdLocationOn className="footer-icon" />
                 Biz Craft Creative Services
               </p>
               <p>(Unit Of United Technology Corporation)</p>
-              <p style={{ width: "70%", lineHeight: "32px" }}>
+              <p className="footer-address-text">
                 #31/13, 2nd Floor, Burkit Rd, Near CANARA BANK, CIT Nagar East,
                 Chennai, Tamil Nadu 600017.
               </p>
             </Link>
             <div className="footer-nav">
               <Link>
-                <FaFacebook
-                  style={{ width: "30px", height: "30px", color: "#ffffff" }}
-                />
+                <FaFacebook className="footer-icon" />
               </Link>
               <Link>
-                <FaLinkedin
-                  style={{ width: "30px", height: "30px", color: "#ffffff" }}
-                />
+                <FaLinkedin className="footer-icon" />
               </Link>
               <Link>
-                <LuInstagram
-                  style={{ width: "30px", height: "30px", color: "#ffffff" }}
-                />
+                <LuInstagram className="footer-icon" />
               </Link>
               <Link>
-                <IoLogoYoutube
-                  style={{ width: "30px", height: "30px", color: "#ffffff" }}
-                />
+                <IoLogoYoutube className="footer-icon" />
               </Link>
               <Link>
-                <FaXTwitter
-                  style={{ width: "30px", height: "30px", color: "#ffffff" }}
-                />
+                <FaXTwitter className="footer-icon" />
               </Link>
             </div>
           </div>
@@ -158,29 +129,22 @@ export default function Footer() {
           <div className="footer-column">
             <p className="footer-title">Contact Us</p>
             <Link to="/services" className="footer-nav">
-              <FaPhone style={{ width: "20px", height: "20px" }} />
+              <FaPhone className="phone-icon" />
               +91 9790782986
             </Link>
             <Link to="/education" className="footer-nav">
-              <FaPhone style={{ width: "20px", height: "20px" }} />
+              <FaPhone className="phone-icon" />
               +91 6381659676
             </Link>
             <Link to="/about" className="footer-nav">
-              <IoMailSharp style={{ width: "20px", height: "20px" }} />
+              <IoMailSharp className="phone-icon" />
               info@bizcraft.in
             </Link>
           </div>
         </div>
       </div>
-      <div style={{ backgroundColor: "#FFFFFF0F", padding: "1% 0%" }}>
-        <p
-          style={{
-            fontSize: 14,
-            fontWeight: 400,
-            color: "#FFFFFF",
-            textAlign: "center",
-          }}
-        >
+      <div className="footer-bottom">
+        <p className="footer-copyright">
           Copy Right 2025 &copy; ceumed. All Rights Reserved. 
         </p>
       </div>

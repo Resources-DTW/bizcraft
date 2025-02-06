@@ -1,4 +1,4 @@
-.email-input::placeholder {
+.footer-email-input::placeholder {
   color: #ffffff !important;
 }
 .footer-title {
@@ -30,4 +30,82 @@
   display: flex;
   gap: 5px;
   flex-direction: column;
+}
+.footer-container {
+  padding: 5%;
+  border-top: 1px solid #ffffff4d;
+}
+.footer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.footer-subscribe-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.footer-subscribe-box {
+  display: flex;
+  gap: 20px;
+}
+.footer-email-input {
+  flex: 1;
+  width: 300px;
+  height: 50px;
+  border-radius: 24px;
+  border: 0.8px solid white;
+  color: white;
+  background-color: #1b1c46;
+}
+/* :where(.css-dev-only-do-not-override-cdzvx5).ant-input-outlined:hover {
+  border-color: #ffffff;
+  background-color: #1b1c46;
+} */
+.footer-email-input:hover {
+  background-color: #1b1c46;
+  border-color: #ffffff;
+}
+
+.footer-email-input:focus {
+  background-color: #1b1c46;
+  border-color: #ffffff;
+}
+.footer-arrow-icon {
+  font-size: 20px;
+  color: #7453af !important;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+.footer-section {
+  width: 30%;
+}
+.footer-icon {
+  width: 30px;
+  height: 30px;
+  color: #ffffff;
+}
+
+.footer-address-text {
+  width: 70%;
+  line-height: 32px;
+}
+.phone-icon {
+  width: 20px;
+  height: 20px;
+}
+.footer-bottom {
+  background-color: #ffffff0f;
+  padding: 1% 0%;
+}
+.footer-copyright {
+  font-size: 14;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
 }

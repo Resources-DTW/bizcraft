@@ -93,6 +93,26 @@ export default function Home() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const elements = document.querySelectorAll(".scroll-animate");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
             setStartCountBottom(true);
           } else {
             setStartCountBottom(false);
@@ -263,10 +283,11 @@ export default function Home() {
   const onFinish = (values) => {
     console.log("Form Values:", values);
   };
+
   return (
     <div>
       <Header />
-      <div style={{ display: "flex", margin: "0 5%" }}>
+      <div className="hero-container">
         <div className="layer1">
           <svg
             width="214"
@@ -284,40 +305,17 @@ export default function Home() {
             />
           </svg>
         </div>
-        <div
-          style={{
-            marginTop: "4%",
-            display: "flex",
-            flexDirection: "column",
-            gap: 30,
-          }}
-        >
-          <p
-            style={{
-              fontSize: 52,
-              fontWeight: 600,
-              color: "#ffffff",
-              width: "150%",
-              marginBottom: 0,
-              lineHeight: "72.8px",
-            }}
-          >
+        <div className="hero-content">
+          <p className="hero-title">
             Expand Your Creative Horizons with Smart{" "}
-            <span style={{ color: "#7453AF" }}>Digital Agency</span>
+            <span className="highlight">Digital Agency</span>
           </p>
-          <p
-            style={{
-              fontSize: 18,
-              fontWeight: 400,
-              color: "#ffffff",
-              width: "100%",
-              lineHeight: "28px",
-            }}
-          >
+          <p className="hero-description">
             Any successful approach starts with ideas and designs, and we
             collaborate with experts in this field.
           </p>
           <Button
+            className="sparkle-text"
             style={{
               fontSize: 14,
               fontWeight: 600,
@@ -331,145 +329,51 @@ export default function Home() {
           >
             GET STARTED
           </Button>
-          <div
-            style={{ display: "flex", justifyContent: "space-between" }}
-            ref={statsTopRef}
-          >
+          <div className="hero-stats" ref={statsTopRef}>
             <div className="stat-item">
-              <p
-                style={{
-                  fontSize: 16,
-                  fontWeight: 600,
-                  color: "#FFFFFF",
-                }}
-              >
-                WORKS DONE
-              </p>
-              <p
-                style={{
-                  fontSize: 52,
-                  fontWeight: 700,
-                  color: "#FFFFFF",
-                  marginTop: 0,
-                }}
-              >
+              <p className="stat-label">WORKS DONE</p>
+              <p className="stat-value">
                 <CountUp start={0} end={startCountTop ? 45 : 0} duration={2} />+
               </p>
             </div>
             <div className="stat-item">
-              <p
-                style={{
-                  fontSize: 16,
-                  fontWeight: 600,
-                  color: "#FFFFFF",
-                }}
-              >
-                HAPPY CLIENTS
-              </p>
-              <p
-                style={{
-                  fontSize: 52,
-                  fontWeight: 700,
-                  color: "#FFFFFF",
-                  marginTop: 0,
-                }}
-              >
+              <p className="stat-label">HAPPY CLIENTS</p>
+              <p className="stat-value">
                 <CountUp start={0} end={startCountTop ? 30 : 0} duration={2} />+
               </p>
             </div>
             <div className="stat-item">
-              <p
-                style={{
-                  fontSize: 16,
-                  fontWeight: 600,
-                  color: "#FFFFFF",
-                }}
-              >
-                EXPERIENCE
-              </p>
-              <p
-                style={{
-                  fontSize: 52,
-                  fontWeight: 700,
-                  color: "#FFFFFF",
-                  marginTop: 0,
-                }}
-              >
+              <p className="stat-label">EXPERIENCE</p>
+              <p className="stat-value">
                 <CountUp start={0} end={startCountTop ? 3 : 0} duration={2} />+
               </p>
             </div>
           </div>
         </div>
-        <div>
-          <img
-            src={img1}
-            alt="cus"
-            style={{
-              width: "850px",
-              height: "813px",
-              objectFit: "cover",
-            }}
-          />
+        <div className="hero-image">
+          <img src={img1} alt="cus" />
         </div>
       </div>
 
-      <div
-        style={{
-          backgroundColor: "#FFFFFF",
-          borderRadius: "16px",
-          margin: "-164px 5% 0px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "0 5%",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        <img src={img2} alt="" width="148px" height="100px" />
+      <div className="brand-container">
+        {/* <img src={img2} alt="" width="148px" height="100px" />
         <img src={img3} alt="" width="138px" height="93px" />
         <img src={img4} alt="" width="197px" height="133px" />
         <img src={img5} alt="" width="191px" height="121px" />
         <img src={img6} alt="" width="148px" height="100px" />
-        <img src={img7} alt="" width="195px" height="132px" />
+        <img src={img7} alt="" width="195px" height="132px" /> */}
+        <img src={img2} alt="" className="brand-logo small" />
+        <img src={img3} alt="" className="brand-logo small" />
+        <img src={img4} alt="" className="brand-logo large" />
+        <img src={img5} alt="" className="brand-logo large" />
+        <img src={img6} alt="" className="brand-logo small" />
+        <img src={img7} alt="" className="brand-logo large" />
       </div>
 
-      <div
-        style={{
-          background: `
-          linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 30%, #FFFFFF12 100%),
-          linear-gradient(-135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 20%, #FFFFFF12 100%)
-        `,
-          paddingTop: "10%",
-          paddingBottom: "2%",
-          marginTop: "-5%",
-        }}
-      >
-        <p
-          style={{
-            color: "#7453AF",
-            textAlign: "center",
-            fontSize: 24,
-            fontWeight: 600,
-            letterSpacing: 20,
-          }}
-        >
-          SERVICES
-        </p>
-        <div
-          style={{
-            display: "flex",
-            margin: "5%",
-          }}
-        >
-          <p
-            style={{
-              color: "#FFFFFF",
-              fontSize: 34,
-              fontWeight: 600,
-              lineHeight: "46.3px",
-            }}
-          >
+      <div className="services-container">
+        <p className="services-title">SERVICES</p>
+        <div className="services-content">
+          <p className="services-heading">
             We Provide Wide Range Of Digital Services
           </p>
           <div style={{ width: "75%" }} className="carousel-hidden">
@@ -532,38 +436,14 @@ export default function Home() {
                 <div key={index} className="testimonial-card1">
                   <img
                     src={service.image}
-                    width="81px"
-                    height="81px"
+                    className="service-icon"
                     alt={service.title}
                   />
 
-                  <p
-                    style={{
-                      fontSize: 22,
-                      fontWeight: 600,
-                      color: "#FFFFFF",
-                      margin: 0,
-                    }}
-                  >
-                    {service.title}
-                  </p>
-                  <ul
-                    style={{
-                      color: "#FFFFFF",
-                      listStyleType: "disc",
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: 10,
-                    }}
-                  >
+                  <p className="service-title">{service.title}</p>
+                  <ul className="service-list">
                     {service.description.map((desc, idx) => (
-                      <li
-                        key={idx}
-                        style={{
-                          fontSize: 14,
-                          fontWeight: 400,
-                        }}
-                      >
+                      <li key={idx} className="service-item">
                         {desc}
                       </li>
                     ))}
@@ -575,23 +455,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div
-        style={{
-          margin: "5%",
-        }}
-      >
+      <div className="technologies-container">
+        <p className="technologies-title">TECHNOLOGIES</p>
         <p
-          style={{
-            color: "#7453AF",
-            textAlign: "center",
-            fontSize: 24,
-            fontWeight: 600,
-            letterSpacing: 10,
-          }}
-        >
-          TECHNOLOGIES
-        </p>
-        <p
+          className="technologies-heading"
           style={{
             color: "#ffffff",
             textAlign: "center",
@@ -603,32 +470,14 @@ export default function Home() {
         </p>
 
         {/* Category Buttons */}
-        <div
-          style={{
-            display: "flex",
-            gap: 20,
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: "5%",
-            width: "100%",
-          }}
-        >
+        <div className="category-buttons">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              style={{
-                fontSize: 14,
-                fontWeight: 600,
-                backgroundColor:
-                  activeCategory === category ? "#7453AF" : "#020331",
-                borderRadius: "108px",
-                width: "134px",
-                height: "55px",
-                color: "#FFFFFF",
-                border: "none",
-                cursor: "pointer",
-              }}
+              className={`category-button ${
+                activeCategory === category ? "active" : ""
+              }`}
             >
               {category}
             </button>
@@ -636,58 +485,34 @@ export default function Home() {
         </div>
 
         {/* Technologies Grid */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 20,
-            marginTop: "5%",
-          }}
-        >
+        <div className="technologies-grid">
           {technologies[activeCategory].map((tech, index) => (
             <div
               className="technology-card"
               key={index}
-              style={{
-                backgroundColor: "#FFFFFF1F",
-                borderRadius: "16px",
-                padding: "1% 2.5%",
-                textAlign: "center",
-                marginTop: index % 2 === 0 ? "0px" : "4%",
-                height: "fit-content",
-              }}
+              style={{ marginTop: index % 2 === 0 ? "0px" : "4%" }}
             >
               <img
                 src={tech.icon}
                 alt={tech.name}
-                style={{ width: "76px", height: "76px" }}
+                className="technology-icon"
               />
-              <p
-                style={{
-                  fontSize: 18,
-                  fontWeight: 400,
-                  color: "#FFFFFF",
-                  margin: 0,
-                }}
-              >
-                {tech.name}
-              </p>
+              <p className="technology-name">{tech.name}</p>
             </div>
           ))}
         </div>
       </div>
 
       <div
-        style={{
-          //   background: `
-          //   linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 30%, #FFFFFF12 100%),
-          //   linear-gradient(-135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 20%, #FFFFFF12 100%)
-          // `,
-          backgroundColor: "#11123D",
-          display: "flex",
-          padding: "5%",
-          position: "relative",
-        }}
+        style={
+          {
+            //   background: `
+            //   linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 30%, #FFFFFF12 100%),
+            //   linear-gradient(-135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 20%, #FFFFFF12 100%)
+            // `,
+          }
+        }
+        className="about-container"
       >
         <div className="layer2">
           <svg
@@ -711,62 +536,23 @@ export default function Home() {
           </svg>
         </div>
         <div>
-          <img
-            src={img11}
-            alt=""
-            style={{
-              width: "796px",
-              height: "705px",
-              objectFit: "cover",
-            }}
-          />
+          <img src={img11} alt="" className="about-image" />
         </div>
-        <div style={{ marginTop: "5%" }}>
-          <p
-            style={{
-              fontSize: 22,
-              fontWeight: 600,
-              letterSpacing: 15,
-              color: "#7453AF",
-            }}
-          >
-            ABOUT US
-          </p>
-          <p
-            style={{
-              fontSize: 34,
-              fontWeight: 700,
-              color: "#ffffff",
-              width: "80%",
-              lineHeight: "56px",
-            }}
-          >
-            <span style={{ color: "#7453AF" }}>Biz Craft</span> A Smart Creative
+        <div className="about-content">
+          <p className="about-title">ABOUT US</p>
+          <p className="about-heading">
+            <span className="highlight">Biz Craft</span> A Smart Creative
             Digital Agency
           </p>
-          <p
-            style={{
-              fontSize: 18,
-              fontWeight: 400,
-              color: "#ffffff",
-              width: "100%",
-              opacity: "80%",
-              lineHeight: "28px",
-            }}
-          >
+          <p className="about-description">
             We are presenting to you an advanced range of digital solutions for
             businesses of all sizes. From branding to web development, we have
             the expertise and experience to help you achieve your business
             goals. Our team is dedicated to delivering innovative and effective
             ways that drive the online presence of your business.
           </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            <div
-              style={{
-                display: "flex",
-                gap: 10,
-              }}
-            >
+          <div className="about-list">
+            <div className="about-item">
               <svg
                 width="23"
                 height="23"
@@ -779,23 +565,9 @@ export default function Home() {
                   fill="#7453AF"
                 />
               </svg>
-              <p
-                style={{
-                  fontSize: 20,
-                  fontWeight: 600,
-                  color: "#FFFFFF",
-                  marginTop: "none",
-                }}
-              >
-                Digital Creative Agency
-              </p>
+              <p className="about-text">Digital Creative Agency</p>
             </div>
-            <div
-              style={{
-                display: "flex",
-                gap: 10,
-              }}
-            >
+            <div className="about-item">
               <svg
                 width="23"
                 height="23"
@@ -808,16 +580,9 @@ export default function Home() {
                   fill="#7453AF"
                 />
               </svg>
-              <p style={{ fontSize: 20, fontWeight: 600, color: "#FFFFFF" }}>
-                Professional Problem Solutions
-              </p>
+              <p className="about-text">Professional Problem Solutions</p>
             </div>
-            <div
-              style={{
-                display: "flex",
-                gap: 10,
-              }}
-            >
+            <div className="about-item">
               <svg
                 width="23"
                 height="23"
@@ -830,12 +595,11 @@ export default function Home() {
                   fill="#7453AF"
                 />
               </svg>
-              <p style={{ fontSize: 20, fontWeight: 600, color: "#FFFFFF" }}>
-                Web Design & Development
-              </p>
+              <p className="about-text">Web Design & Development</p>
             </div>
           </div>
           <Button
+            className="sparkle-text"
             style={{
               fontSize: 14,
               fontWeight: 600,
@@ -852,61 +616,29 @@ export default function Home() {
         </div>
       </div>
 
-      <div
-        style={{
-          margin: "5%",
-        }}
-      >
-        <p
-          style={{
-            color: "#7453AF",
-            textAlign: "center",
-            fontSize: 24,
-            fontWeight: 600,
-            letterSpacing: 10,
-          }}
-        >
-          INDUSTRIES
-        </p>
-        <p
-          style={{
-            color: "#ffffff",
-            textAlign: "center",
-            fontSize: 34,
-            fontWeight: 600,
-            lineHeight: "56px",
-          }}
-        >
+      <div className="technologies-container">
+        <p className="technologies-title">INDUSTRIES</p>
+        <p className="industries-heading">
           Our Solutions Meet
           <br /> The Digital Requirements Of These Industries
         </p>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 20,
-            marginTop: "5%",
-          }}
-        >
+        <div className="industries-grid">
           {industries.map((indus, index) => (
             <div
-              className="technology-card"
               key={index}
+              className="industry-card scroll-animate"
               style={{
-                backgroundColor: "#FFFFFF1F",
-                borderRadius: "16px",
-                padding: "20px 26px",
-                textAlign: "center",
                 marginTop: index % 2 === 0 ? "0px" : "8%",
-                height: "fit-content",
               }}
             >
               <img
                 src={indus.icon}
                 alt={indus.name}
+                className="industry-icon"
                 style={{ width: "50%", height: "auto" }}
               />
               <p
+                className="industry-name"
                 style={{
                   fontSize: 18,
                   fontWeight: 400,
@@ -921,137 +653,39 @@ export default function Home() {
         </div>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          padding: "3%",
-          margin: "7% 0%",
-          background: `
-            linear-gradient(90deg, 
-              rgba(9, 5, 55, 1) 0%, 
-              rgba(255, 255, 255, 0.1) 50%,
-              rgba(9, 5, 55, 1) 100%  
-            )
-          `,
-        }}
-        ref={statsBottomRef}
-      >
+      <div className="stats-container" ref={statsBottomRef}>
         <div className="stat-item">
-          <p
-            style={{
-              fontSize: 80,
-              fontWeight: 700,
-              color: "#FFFFFF",
-              margin: 0,
-            }}
-          >
+          <p className="stats-number">
             <CountUp start={0} end={startCountBottom ? 100 : 0} duration={2} />+
           </p>
-          <p
-            style={{
-              fontSize: 20,
-              fontWeight: 400,
-              color: "#FFFFFF",
-            }}
-          >
-            Successful Projects
-          </p>
+          <p className="stats-title">Successful Projects</p>
         </div>
         <div className="stat-item">
-          <p
-            style={{
-              fontSize: 80,
-              fontWeight: 700,
-              color: "#FFFFFF",
-              margin: 0,
-            }}
-          >
+          <p className="stats-number">
             <CountUp start={0} end={startCountBottom ? 8 : 0} duration={2} />+
           </p>
-          <p
-            style={{
-              fontSize: 20,
-              fontWeight: 400,
-              color: "#FFFFFF",
-            }}
-          >
-            Countries Served
-          </p>
+          <p className="stats-title">Countries Served</p>
         </div>
         <div className="stat-item">
-          <p
-            style={{
-              fontSize: 80,
-              fontWeight: 700,
-              color: "#FFFFFF",
-              margin: 0,
-            }}
-          >
+          <p className="stats-number">
             <CountUp start={0} end={startCountBottom ? 10 : 0} duration={2} />+
           </p>
-          <p
-            style={{
-              fontSize: 20,
-              fontWeight: 400,
-              color: "#FFFFFF",
-            }}
-          >
-            Years of Expertise
-          </p>
+          <p className="stats-title">Years of Expertise</p>
         </div>
         <div className="stat-item">
-          <p
-            style={{
-              fontSize: 80,
-              fontWeight: 700,
-              color: "#FFFFFF",
-              margin: 0,
-            }}
-          >
+          <p className="stats-number">
             <CountUp start={0} end={startCountBottom ? 95 : 0} duration={2} />%
           </p>
-          <p
-            style={{
-              fontSize: 20,
-              fontWeight: 400,
-              color: "#FFFFFF",
-            }}
-          >
-            Client Satisfaction
-          </p>
+          <p className="stats-title">Client Satisfaction</p>
         </div>
       </div>
 
       <div>
-        <div style={{ margin: "5%" }}>
-          <p
-            style={{
-              color: "#7453AF",
-              fontSize: 24,
-              fontWeight: 600,
-              lineHeight: "32px",
-              letterSpacing: 10,
-            }}
-          >
-            TESTIMONIALS
-          </p>
-          <p
-            style={{
-              color: "#FFFFFF",
-              fontSize: 34,
-              fontWeight: 600,
-              lineHeight: "46.3px",
-            }}
-          >
+        <div className="technologies-container">
+          <p className="testimonials-title">TESTIMONIALS</p>
+          <p className="testimonials-heading">
             What’s Our Client Opinion About{" "}
-            <span
-              style={{
-                color: "#7453AF",
-              }}
-            >
-              Biz Craft
-            </span>
+            <span className="highlight">Biz Craft</span>
           </p>
           <p
             style={{
@@ -1123,39 +757,16 @@ export default function Home() {
           >
             {testimonials.map((testimonial, index) => (
               <div key={index} className="testimonial-card2">
-                <p
-                  style={{
-                    fontSize: 18,
-                    fontWeight: 400,
-                    color: "#FFFFFF",
-                  }}
-                >
-                  {testimonial.review}
-                </p>
-                <div style={{ display: "flex", gap: 10 }}>
+                <p className="testimonial-review">{testimonial.review}</p>
+                <div className="testimonial-user">
                   <img
                     src={testimonial.image}
-                    width="70px"
-                    height="70px"
+                    className="testimonial-avatar"
                     alt={testimonial.name}
                   />
                   <div>
-                    <p
-                      style={{
-                        fontSize: 18,
-                        fontWeight: 400,
-                        color: "#FFFFFF",
-                      }}
-                    >
-                      {testimonial.name}
-                    </p>
-                    <p
-                      style={{
-                        fontSize: 14,
-                        fontWeight: 400,
-                        color: "#ffffff",
-                      }}
-                    >
+                    <p className="testimonial-review">{testimonial.name}</p>
+                    <p className="testimonial-designation">
                       {testimonial.designation}
                     </p>
                   </div>
@@ -1166,39 +777,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div
-        style={{
-          margin: "10% 5%",
-          padding: "5%",
-          borderRadius: "40px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          // backgroundColor: "#43355D",
-          // background: `
-          //   linear-gradient(
-          //     90deg,
-          //     rgba(9, 5, 55, 1) -3%,
-          //     rgba(150, 119, 202, 0.5) 30%,
-          //     rgba(255, 255, 255, 0.20) 40%,
-          //     rgba(116, 83, 175, 0.5) 60%,
-          //     rgba(9, 5, 55, 1) 92%
-          //   )
-          // `,
-          background: `
-          linear-gradient(
-            135deg, 
-            rgba(116, 83, 175, 0.2) 0%, /* Purple at 70% opacity */
-            rgba(116, 83, 175, 0.4) 40%, /* Lighter Purple */
-            rgba(255, 255, 255, 0.1) 60%, /* Light transparency */
-            rgba(9, 5, 55, 1) 100% /* Deep Blue */
-          )
-        `,
-        }}
-      >
-        <p style={{ fontSize: 34, fontWeight: 600, color: "#FFFFFF" }}>
-          Still Looking For Digital Agency Company?
-        </p>
+      <div className="cta-container">
+        <p className="cta-heading">Still Looking For Digital Agency Company?</p>
         <Button
           style={{
             fontSize: 14,
@@ -1211,61 +791,23 @@ export default function Home() {
             borderStyle: "none",
           }}
         >
-          <BiSolidPhoneCall style={{ width: "24px", height: "24px" }} />
+          <BiSolidPhoneCall className="cta-icon" />
           CALL US
         </Button>
       </div>
 
-      <div
-        style={{
-          margin: "10% 0%",
-        }}
-      >
-        <p
-          style={{
-            fontSize: 24,
-            fontWeight: 600,
-            color: "#7453AF",
-            letterSpacing: 10,
-            textAlign: "center",
-          }}
-        >
-          FAQ
-        </p>
-        <p
-          style={{
-            fontSize: 34,
-            fontWeight: 600,
-            color: "#FFFFFF",
-            textAlign: "center",
-          }}
-        >
+      <div className="faq-container">
+        <p className="faq-title">FAQ</p>
+        <p className="faq-heading">
           Find Answers For Commonly Asked Questions, Here
         </p>
         <Faq />
       </div>
 
       <div>
-        <p
-          style={{
-            fontSize: 24,
-            fontWeight: 600,
-            color: "#7453AF",
-            letterSpacing: 10,
-            textAlign: "center",
-          }}
-        >
-          OUR WORKS
-        </p>
-        <div
-          style={{
-            margin: "5%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <img src={works} width="100%" height="100%" alt="" />
+        <p className="faq-title">OUR WORKS</p>
+        <div className="works-image-container">
+          <img src={works} className="works-image" alt="" />
 
           <Button
             style={{
@@ -1286,159 +828,46 @@ export default function Home() {
         </div>
       </div>
 
-      <div style={{ margin: "10% 0%" }}>
-        <p
-          style={{
-            fontSize: 24,
-            fontWeight: 600,
-            color: "#7453AF",
-            letterSpacing: 10,
-            textAlign: "center",
-          }}
-        >
-          CONTACT US
-        </p>
-        <div
-          style={{
-            margin: "5%",
-            padding: "5% 0%",
-            borderRadius: "40px",
-            backgroundColor: "#11123d",
-          }}
-        >
-          <p
-            style={{
-              fontSize: 34,
-              fontWeight: 600,
-              color: "#FFFFFF",
-              textAlign: "center",
-            }}
-          >
-            Get In Touch
-          </p>
-          <p
-            style={{
-              fontSize: 16,
-              fontWeight: 400,
-              color: "#FFFFFF",
-              lineHeight: "28px",
-              textAlign: "center",
-            }}
-          >
+      <div className="contact-container">
+        <p className="faq-title">CONTACT US</p>
+        <div className="contact-box">
+          <p className="contact-heading">Get In Touch</p>
+          <p className="contact-subtext">
             Call us today to Grow your business, products and boost your
             <br /> brand recognition.
           </p>
-          <div style={{ display: "flex", marginTop: "3%" }}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 20,
-                margin: "5%",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  gap: 20,
-                  alignItems: "center",
-                  justifyItems: "center",
-                }}
-              >
-                <img src={project} alt="" width="44px" height="44px" />
+          <div className="contact-content">
+            <div className="contact-info">
+              <div className="contact-item">
+                <img src={project} alt="" className="contact-icon" />
                 <div>
-                  <p
-                    style={{
-                      fontSize: 18,
-                      fontWeight: 600,
-                      color: "#FFFFFF",
-                      margin: 0,
-                    }}
-                  >
-                    Project Offers
-                  </p>
-                  <p
-                    style={{ fontSize: 16, fontWeight: 400, color: "#FFFFFF" }}
-                  >
-                    info@bizcraft.in
-                  </p>
+                  <p className="contact-label">Project Offers</p>
+                  <p className="contact-detail">info@bizcraft.in</p>
                 </div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  gap: 20,
-                  alignItems: "center",
-                  justifyItems: "center",
-                }}
-              >
-                <img src={enquiry} alt="" width="44px" height="44px" />
+              <div className="contact-item">
+                <img src={enquiry} alt="" className="contact-icon" />
                 <div>
-                  <p
-                    style={{
-                      fontSize: 18,
-                      fontWeight: 600,
-                      color: "#FFFFFF",
-                      margin: 0,
-                    }}
-                  >
-                    For Any Enquiry
-                  </p>
-                  <p
-                    style={{ fontSize: 16, fontWeight: 400, color: "#FFFFFF" }}
-                  >
-                    +91 9790782986
-                  </p>
+                  <p className="contact-label">For Any Enquiry</p>
+                  <p className="contact-detail">+91 9790782986</p>
                 </div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  gap: 20,
-                  alignItems: "center",
-                  justifyItems: "center",
-                }}
-              >
-                <img src={support} alt="" width="44px" height="44px" />
+              <div className="contact-item">
+                <img src={support} alt="" className="contact-icon" />
 
                 <div>
-                  <p
-                    style={{
-                      fontSize: 18,
-                      fontWeight: 600,
-                      color: "#FFFFFF",
-                      margin: 0,
-                    }}
-                  >
-                    For Technical Support
-                  </p>
-                  <p
-                    style={{ fontSize: 16, fontWeight: 400, color: "#FFFFFF" }}
-                  >
-                    +91 6381659676
-                  </p>
+                  <p className="contact-label">For Technical Support</p>
+                  <p className="contact-detail">+91 6381659676</p>
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                backgroundColor: "#FFFFFF1F",
-                padding: "3%",
-                borderRadius: "24px",
-                boxShadow: "0 8px 16px rgba(0,0,0,0.2)",
-                width: "60%",
-                margin: "0 auto",
-              }}
-            >
+            <div className="contact-form-container">
               <Form
                 layout="vertical"
                 onFinish={onFinish}
-                style={{ width: "100%", color: "#FFFFFF" }}
+                className="contact-form"
               >
-                <div style={{ display: "flex", gap: "16px" }}>
+                <div className="form-row">
                   <Form.Item
                     name="firstName"
                     rules={[
@@ -1447,12 +876,9 @@ export default function Home() {
                         message: "Please enter your first name!",
                       },
                     ]}
-                    style={{ flex: 1 }}
+                    className="form-item"
                   >
-                    <Input
-                      placeholder="First Name"
-                      style={{ height: "45px" }}
-                    />
+                    <Input placeholder="First Name" className="form-input" />
                   </Form.Item>
                   <Form.Item
                     name="lastName"
@@ -1462,21 +888,21 @@ export default function Home() {
                         message: "Please enter your last name!",
                       },
                     ]}
-                    style={{ flex: 1 }}
+                    className="form-item"
                   >
-                    <Input placeholder="Last Name" style={{ height: "45px" }} />
+                    <Input placeholder="Last Name" className="form-input" />
                   </Form.Item>
                 </div>
-                <div style={{ display: "flex", gap: "16px" }}>
+                <div className="form-row">
                   <Form.Item
                     name="email"
                     rules={[
                       { required: true, message: "Please enter your email!" },
                       { type: "email", message: "Please enter a valid email!" },
                     ]}
-                    style={{ flex: 1 }}
+                    className="form-item"
                   >
-                    <Input placeholder="E-mail" style={{ height: "45px" }} />
+                    <Input placeholder="E-mail" className="form-input" />
                   </Form.Item>
                   <Form.Item
                     name="contactNumber"
@@ -1490,11 +916,11 @@ export default function Home() {
                         message: "Only numeric values are allowed!",
                       },
                     ]}
-                    style={{ flex: 1 }}
+                    className="form-item"
                   >
                     <Input
                       placeholder="Contact Number"
-                      style={{ height: "45px" }}
+                      className="form-input"
                     />
                   </Form.Item>
                 </div>
@@ -1507,7 +933,7 @@ export default function Home() {
                   <Input.TextArea
                     rows={4}
                     placeholder="Message..."
-                    style={{ resize: "none" }}
+                    className="form-textarea"
                   />
                 </Form.Item>
                 <Form.Item>
