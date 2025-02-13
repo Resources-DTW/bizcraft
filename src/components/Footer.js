@@ -145,7 +145,7 @@ export default function Footer() {
       </div>
       <div className="footer-bottom">
         <p className="footer-copyright">
-          Copy Right 2025 &copy; ceumed. All Rights Reserved. 
+          Copy Right 2025 &copy; Bizcraft. All Rights Reserved. 
         </p>
       </div>
     </>
