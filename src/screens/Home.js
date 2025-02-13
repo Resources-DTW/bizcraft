@@ -356,12 +356,6 @@ export default function Home() {
       </div>
 
       <div className="brand-container">
-        {/* <img src={img2} alt="" width="148px" height="100px" />
-        <img src={img3} alt="" width="138px" height="93px" />
-        <img src={img4} alt="" width="197px" height="133px" />
-        <img src={img5} alt="" width="191px" height="121px" />
-        <img src={img6} alt="" width="148px" height="100px" />
-        <img src={img7} alt="" width="195px" height="132px" /> */}
         <img src={img2} alt="" className="brand-logo small" />
         <img src={img3} alt="" className="brand-logo small" />
         <img src={img4} alt="" className="brand-logo large" />
@@ -503,17 +497,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div
-        style={
-          {
-            //   background: `
-            //   linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 30%, #FFFFFF12 100%),
-            //   linear-gradient(-135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 20%, #FFFFFF12 100%)
-            // `,
-          }
-        }
-        className="about-container"
-      >
+      <div className="about-container">
         <div className="layer2">
           <svg
             width="263"
