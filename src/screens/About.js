@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
-import { Button } from "antd";
+import { Button, Card } from "antd";
 import "../styles/About.css";
 import Footer from "../components/Footer";
 import gradient from "../assests/gradient.png";
@@ -12,6 +12,11 @@ import img5 from "../assests/img5.png";
 import img6 from "../assests/img6.png";
 import img7 from "../assests/img7.png";
 import img11 from "../assests/img11.png";
+import cardA from "../assests/cardA.png";
+import cardD from "../assests/cardD.png";
+import cardB from "../assests/cardB.png";
+import cardU from "../assests/cardU.png";
+import cardW from "../assests/cardW.png";
 import vector1 from "../assests/vector-about1.png";
 
 export default function About() {
@@ -180,9 +185,18 @@ export default function About() {
             LEARN MORE
           </Button>
         </div>
-
-        <div container-a4>
-          <p className="a4-heading">We are expert in the field</p>
+      </div>
+      <div>
+        <img src={cardD} className="card-img" alt="d" />
+        <p className="card-title">Creativity unique designers</p>
+        <div>
+          <p className="card-subtitle">
+            Our team comprises exceptionally creative and diverse designers who
+            infuse fresh perspectives into their work. This commitment to
+            innovation and uniqueness drives our ability to bring clients'
+            visions to life, setting us apart in the dynamic realm of design and
+            digital innovation.
+          </p>
         </div>
       </div>
       <Footer />
