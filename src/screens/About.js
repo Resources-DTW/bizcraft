@@ -168,7 +168,6 @@ export default function About() {
       <Header />
       <div className="Container-a1">
         <img className="Employee-img-2" src={gradient} alt="cus" />
-        {/* <img className="Employee-img-3" src={groupstar} alt="cus" /> */}
 
         <div className="Employee-img">
           <img className="Employee-img-1" src={groupstar} alt="cus" />
