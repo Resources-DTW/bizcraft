@@ -43,6 +43,7 @@ import { BiSolidPhoneCall } from "react-icons/bi";
 import Faq from "../components/Faq";
 import { Form, Input } from "antd";
 import Footer from "../components/Footer";
+import quote from "../assests/quote.png";
 
 export default function Home() {
   const [isDesktop, setIsDesktop] = useState(true);
@@ -451,17 +452,7 @@ export default function Home() {
 
       <div className="technologies-container">
         <p className="technologies-title">TECHNOLOGIES</p>
-        <p
-          className="technologies-heading"
-          style={{
-            color: "#ffffff",
-            textAlign: "center",
-            fontSize: 34,
-            fontWeight: 600,
-          }}
-        >
-          Technologies We Work With
-        </p>
+        <p className="technologies-heading">Technologies We Work With</p>
 
         {/* Category Buttons */}
         <div className="category-buttons">
@@ -497,7 +488,17 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="about-container">
+      <div
+        style={
+          {
+            //   background: `
+            //   linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 30%, #FFFFFF12 100%),
+            //   linear-gradient(-135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 20%, #FFFFFF12 100%)
+            // `,
+          }
+        }
+        className="about-container"
+      >
         <div className="layer2">
           <svg
             width="263"
@@ -754,6 +755,7 @@ export default function Home() {
                       {testimonial.designation}
                     </p>
                   </div>
+                  <img src={quote} alt="quote" width="45px" height="40px" />
                 </div>
               </div>
             ))}

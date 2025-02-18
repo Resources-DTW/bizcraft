@@ -22,6 +22,9 @@
 .a1-content {
   margin-left: 5%;
   margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .a1-title {
   font-size: 52px;
@@ -38,7 +41,7 @@
   font-size: 18px;
   font-weight: 400;
   color: #ffffff;
-  width: 100%;
+  width: 90%;
   line-height: 28px;
 }
 .brand-container-a2 {
@@ -68,7 +71,22 @@
   height: 130px;
 }
 .container-a2 {
-  background: #ffffff0f;
+  /* background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 30%,
+      #ffffff12 100%
+    ),
+    linear-gradient(
+      -135deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 20%,
+      #ffffff12 100%
+    ); */
+  /* padding-top: 10%;
+  padding-bottom: 2%;
+  margin-top: -5%; */
+  background-color: #0f1040;
   display: flex;
   padding: 5% 5%;
   gap: 10%;
@@ -104,16 +122,16 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 27.24px;
-  letter-spacing: 6%;
+  letter-spacing: 5px;
   color: #ffffff;
+  text-transform: uppercase;
 }
 .a2-description {
   font-weight: 400;
   font-size: 18px;
   line-height: 32px;
-  letter-spacing: 0%;
-  text-align: justify;
   color: #ffffff;
+  opacity: 80%;
 }
 .about-container-a3 {
   background-color: #11123d;
@@ -174,4 +192,66 @@
   position: absolute;
   left: 38%;
   top: 50%;
+}
+.expert-heading {
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 5%;
+}
+.card-img {
+  width: 115px !important;
+  height: 123px !important;
+}
+.card-title {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 36px;
+  color: #ffffff !important;
+  text-align: end;
+}
+.card {
+  padding: 5%;
+  background-color: #0c0d39 !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 20px !important;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+}
+.card-desc {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #ffffff;
+  opacity: 80%;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 5%;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
+  }
+}
+.work-section {
+  margin: 10% 0%;
 }

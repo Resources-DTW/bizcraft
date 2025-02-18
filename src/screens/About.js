@@ -1,6 +1,5 @@
-import React from "react";
-import Header from "../components/Header";
-import { Button, Card } from "antd";
+import React, { useEffect, useRef, useState } from "react";
+import { Button } from "antd";
 import "../styles/About.css";
 import Footer from "../components/Footer";
 import gradient from "../assests/gradient.png";
@@ -18,12 +17,155 @@ import cardB from "../assests/cardB.png";
 import cardU from "../assests/cardU.png";
 import cardW from "../assests/cardW.png";
 import vector1 from "../assests/vector-about1.png";
+import Header from "../components/Header";
+import CountUp from "react-countup";
+import Carousel from "react-multi-carousel";
+import img13 from "../assests/img13.png";
+import img14 from "../assests/img14.png";
+import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
+import works from "../assests/works.png";
+import { Form, Input } from "antd";
+import project from "../assests/project.png";
+import enquiry from "../assests/enquiry.png";
+import support from "../assests/support.png";
+import quote from "../assests/quote.png";
+
+const expertFields = [
+  {
+    id: 1,
+    title: "Creativity Unique Designers",
+    description:
+      "Our team comprises exceptionally creative and diverse designers who infuse fresh perspectives into their work. This commitment to innovation and uniqueness drives our ability to bring clients' visions to life, setting us apart in the dynamic realm of design and digital innovation.",
+    image: cardD,
+  },
+  {
+    id: 2,
+    title: "UI/UX Crafters",
+    description:
+      "Our best graphic designing team design UI/UX easy-to-navigate with exceptional user experience considering the visual elements of a digital product, including layout, color schemes, typography, icons, and graphic elements.",
+    image: cardU,
+  },
+  {
+    id: 3,
+    title: "Technology Coding Experts",
+    description:
+      "Our team of developers works closely with the customers to analyze, code, and execute. Our developers are known to build an application with outstanding technical expertise and profound knowledge.",
+    image: cardD,
+  },
+  {
+    id: 4,
+    title: "Web Genius Whiz",
+    description:
+      "We have a dedicated and certified team for website development that focuses on every requirement of clients. We work on modules to deliver what is expected of the project to help build their business in the competitive world.",
+    image: cardW,
+  },
+  {
+    id: 5,
+    title: "App Inventors",
+    description:
+      "Our application developers are proficient and professional in bringing your app ideas to life with precision and expertise. With our app developers, we design and develop intuitive applications that captivate users.",
+    image: cardA,
+  },
+  {
+    id: 6,
+    title: "Branding Connoisseurs",
+    description:
+      "At BizCeaft, we have skilled digital marketers to take care of your website for you. From social media to content marketing, our talented team looks out for you and makes your business/product rank top in any SERP.",
+    image: cardB,
+  },
+];
 
 export default function About() {
+  const statsBottomRef = useRef(null);
+  const [startCountBottom, setStartCountBottom] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setStartCountBottom(true);
+          } else {
+            setStartCountBottom(false);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (statsBottomRef.current) {
+      observer.observe(statsBottomRef.current);
+    }
+
+    return () => {
+      if (statsBottomRef.current) {
+        observer.unobserve(statsBottomRef.current);
+      }
+    };
+  }, []);
+
+  const testimonials = [
+    {
+      review:
+        "I can't thank Biz Craft enough for their outstanding service. They transformed my small business into a digital powerhouse with a beautiful website, effective SEO, and a tailored social media strategy. My online sales have never been better!",
+      image: img14,
+      name: "Emily W.",
+      designation: "Marketing Director at ABC Corporation",
+    },
+    {
+      review:
+        "Working with Biz Craft has been a game-changer for our business. Their digital solutions have increased our online presence, improved user engagement, and ultimately boosted our revenue. I highly recommend their expertise!",
+      image: img13,
+      name: "Sarah L.",
+      designation: "Marketing Director at ABC Corporation",
+    },
+    {
+      review:
+        "Our collaboration with Biz Craft has been nothing short of exceptional. Their team's creativity and technical prowess have elevated our digital marketing efforts to new heights. They consistently deliver results beyond our expectations.",
+      image: img14,
+      name: "Dr. James R.",
+      designation: "Marketing Director at ABC Corporation",
+    },
+  ];
+  const TestimonialLeftArrow = ({ onClick }) => {
+    return (
+      <button
+        className=" testimonial-arrow testimonial-arrow-left"
+        onClick={onClick}
+      >
+        <IoIosArrowRoundBack />
+      </button>
+    );
+  };
+
+  const TestimonialRightArrow = ({ onClick }) => {
+    return (
+      <button
+        className="testimonial-arrow testimonial-arrow-right"
+        onClick={onClick}
+      >
+        <IoIosArrowRoundForward />
+      </button>
+    );
+  };
+  const onFinish = (values) => {
+    console.log("Form Values:", values);
+  };
+
   return (
     <div>
       <Header />
-
       <div className="Container-a1">
         <img className="Employee-img-2" src={gradient} alt="cus" />
         {/* <img className="Employee-img-3" src={groupstar} alt="cus" /> */}
@@ -66,10 +208,11 @@ export default function About() {
         <img src={img6} alt="" className="brand-logo small" />
         <img src={img7} alt="" className="brand-logo large" />
       </div>
+
       <div className="container-a2">
-        <img src={vector1} alt="c" />
+        <img src={vector1} alt="vector" />
         <div className="a2-content">
-          <p className="a2-title">Our primary focus is on technology</p>
+          <p className="a2-title">Our Primary Focus Is On Technology</p>
         </div>
         <div className="a2-content-2">
           <p className="a2-subtitle">Take a closer look at our excellence</p>
@@ -186,17 +329,303 @@ export default function About() {
           </Button>
         </div>
       </div>
+
       <div>
-        <img src={cardD} className="card-img" alt="d" />
-        <p className="card-title">Creativity unique designers</p>
-        <div>
-          <p className="card-subtitle">
-            Our team comprises exceptionally creative and diverse designers who
-            infuse fresh perspectives into their work. This commitment to
-            innovation and uniqueness drives our ability to bring clients'
-            visions to life, setting us apart in the dynamic realm of design and
-            digital innovation.
+        <p className="expert-heading">We Are Expert In The Field</p>
+        <div className="grid-container">
+          {expertFields.map((expert) => (
+            <div key={expert.id} className="card">
+              <div className="card-header">
+                <img
+                  src={expert.image}
+                  className="card-img"
+                  alt={expert.title}
+                />
+                <p className="card-title">{expert.title}</p>
+              </div>
+              <p className="card-desc">{expert.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="stats-container" ref={statsBottomRef}>
+        <div className="stat-item">
+          <p className="stats-number">
+            <CountUp start={0} end={startCountBottom ? 100 : 0} duration={2} />+
           </p>
+          <p className="stats-title">Successful Projects</p>
+        </div>
+        <div className="stat-item">
+          <p className="stats-number">
+            <CountUp start={0} end={startCountBottom ? 8 : 0} duration={2} />+
+          </p>
+          <p className="stats-title">Countries Served</p>
+        </div>
+        <div className="stat-item">
+          <p className="stats-number">
+            <CountUp start={0} end={startCountBottom ? 10 : 0} duration={2} />+
+          </p>
+          <p className="stats-title">Years of Expertise</p>
+        </div>
+        <div className="stat-item">
+          <p className="stats-number">
+            <CountUp start={0} end={startCountBottom ? 95 : 0} duration={2} />%
+          </p>
+          <p className="stats-title">Client Satisfaction</p>
+        </div>
+      </div>
+
+      <div>
+        <div className="technologies-container">
+          <p className="testimonials-title">TESTIMONIALS</p>
+          <p className="testimonials-heading">
+            What’s Our Client Opinion About{" "}
+            <span className="highlight">Biz Craft</span>
+          </p>
+          <p
+            style={{
+              color: "#FFFFFF",
+              fontSize: 24,
+              fontWeight: 500,
+              opacity: "80%",
+              marginBottom: "-10%",
+            }}
+          >
+            Over 450<sup>+</sup> Satisfied Clients And Growing
+          </p>
+        </div>
+        <div style={{ position: "relative" }} className="carousel-hidden">
+          <Carousel
+            dotListClass="custom-dots"
+            showDots={!isDesktop}
+            swipeable={true}
+            customLeftArrow={isDesktop ? <TestimonialLeftArrow /> : null}
+            customRightArrow={isDesktop ? <TestimonialRightArrow /> : null}
+            additionalTransfrom={0}
+            arrows
+            autoPlaySpeed={3000}
+            centerMode={false}
+            className=""
+            containerClass=""
+            draggable
+            focusOnSelect={false}
+            infinite
+            itemClass="carousel-item-padding"
+            keyBoardControl
+            minimumTouchDrag={80}
+            pauseOnHover
+            renderArrowsWhenDisabled={false}
+            renderButtonGroupOutside={false}
+            renderDotsOutside={false}
+            responsive={{
+              desktop: {
+                breakpoint: {
+                  max: 3000,
+                  min: 1024,
+                },
+                items: 3,
+                partialVisibilityGutter: 40,
+              },
+              mobile: {
+                breakpoint: {
+                  max: 768,
+                  min: 0,
+                },
+                items: 1,
+                partialVisibilityGutter: 40,
+              },
+              tablet: {
+                breakpoint: {
+                  max: 1024,
+                  min: 768,
+                },
+                items: 2,
+                partialVisibilityGutter: 30,
+              },
+            }}
+            rewind={false}
+            rewindWithAnimation={false}
+            rtl={false}
+            shouldResetAutoplay
+            sliderClass=""
+            slidesToSlide={1}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial-card2">
+                <p className="testimonial-review">{testimonial.review}</p>
+                <div className="testimonial-user">
+                  <img
+                    src={testimonial.image}
+                    className="testimonial-avatar"
+                    alt={testimonial.name}
+                  />
+                  <div>
+                    <p className="testimonial-review">{testimonial.name}</p>
+                    <p className="testimonial-designation">
+                      {testimonial.designation}
+                    </p>
+                  </div>
+                  <img src={quote} alt="quote" width="45px" height="40px" />
+                </div>
+              </div>
+            ))}
+          </Carousel>
+        </div>
+      </div>
+
+      <div className="work-section">
+        <p className="faq-title">OUR WORKS</p>
+        <div className="works-image-container">
+          <img src={works} className="works-image" alt="" />
+
+          <Button
+            style={{
+              position: "absolute",
+              zIndex: 1,
+              fontSize: 22,
+              fontWeight: 400,
+              backgroundColor: "transparent",
+              borderRadius: "8px",
+              width: "377px",
+              height: "70px",
+              color: "#FFFFFF",
+              border: "1px solid #FFFFFF",
+            }}
+          >
+            Explore Our Portfolio
+          </Button>
+        </div>
+      </div>
+
+      <div className="contact-container">
+        <p className="faq-title">CONTACT US</p>
+        <div className="contact-box">
+          <p className="contact-heading">Get In Touch</p>
+          <p className="contact-subtext">
+            Call us today to Grow your business, products and boost your
+            <br /> brand recognition.
+          </p>
+          <div className="contact-content">
+            <div className="contact-info">
+              <div className="contact-item">
+                <img src={project} alt="" className="contact-icon" />
+                <div>
+                  <p className="contact-label">Project Offers</p>
+                  <p className="contact-detail">info@bizcraft.in</p>
+                </div>
+              </div>
+              <div className="contact-item">
+                <img src={enquiry} alt="" className="contact-icon" />
+                <div>
+                  <p className="contact-label">For Any Enquiry</p>
+                  <p className="contact-detail">+91 9790782986</p>
+                </div>
+              </div>
+              <div className="contact-item">
+                <img src={support} alt="" className="contact-icon" />
+
+                <div>
+                  <p className="contact-label">For Technical Support</p>
+                  <p className="contact-detail">+91 6381659676</p>
+                </div>
+              </div>
+            </div>
+            <div className="contact-form-container">
+              <Form
+                layout="vertical"
+                onFinish={onFinish}
+                className="contact-form"
+              >
+                <div className="form-row">
+                  <Form.Item
+                    name="firstName"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please enter your first name!",
+                      },
+                    ]}
+                    className="form-item"
+                  >
+                    <Input placeholder="First Name" className="form-input" />
+                  </Form.Item>
+                  <Form.Item
+                    name="lastName"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please enter your last name!",
+                      },
+                    ]}
+                    className="form-item"
+                  >
+                    <Input placeholder="Last Name" className="form-input" />
+                  </Form.Item>
+                </div>
+                <div className="form-row">
+                  <Form.Item
+                    name="email"
+                    rules={[
+                      { required: true, message: "Please enter your email!" },
+                      { type: "email", message: "Please enter a valid email!" },
+                    ]}
+                    className="form-item"
+                  >
+                    <Input placeholder="E-mail" className="form-input" />
+                  </Form.Item>
+                  <Form.Item
+                    name="contactNumber"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please enter your contact number!",
+                      },
+                      {
+                        pattern: /^[0-9]+$/,
+                        message: "Only numeric values are allowed!",
+                      },
+                    ]}
+                    className="form-item"
+                  >
+                    <Input
+                      placeholder="Contact Number"
+                      className="form-input"
+                    />
+                  </Form.Item>
+                </div>
+                <Form.Item
+                  name="message"
+                  rules={[
+                    { required: true, message: "Please enter your message!" },
+                  ]}
+                >
+                  <Input.TextArea
+                    rows={4}
+                    placeholder="Message..."
+                    className="form-textarea"
+                  />
+                </Form.Item>
+                <Form.Item>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    style={{
+                      width: "100%",
+                      height: "50px",
+                      borderRadius: "24px",
+                      backgroundColor: "#7453AF",
+                      border: "none",
+                      fontWeight: 600,
+                      fontSize: 16,
+                    }}
+                  >
+                    SUBMIT
+                  </Button>
+                </Form.Item>
+              </Form>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />
