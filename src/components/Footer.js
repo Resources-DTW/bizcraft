@@ -90,16 +90,16 @@ export default function Footer() {
           <div className="footer-column">
             <p className="footer-title">Quick Links</p>
 
-            <Link to="/services" className="footer-nav">
+            <Link to="/" className="footer-nav">
               Home
             </Link>
-            <Link to="/education" className="footer-nav">
+            <Link to="/about-us" className="footer-nav">
               About Us{" "}
             </Link>
-            <Link to="/about" className="footer-nav">
+            <Link to="/blog" className="footer-nav">
               Blog
             </Link>
-            <Link to="/contact" className="footer-nav">
+            <Link to="/contact-us" className="footer-nav">
               Contact Us
             </Link>
           </div>
@@ -128,15 +128,15 @@ export default function Footer() {
 
           <div className="footer-column">
             <p className="footer-title">Contact Us</p>
-            <Link to="/services" className="footer-nav">
+            <Link to="/" className="footer-nav">
               <FaPhone className="phone-icon" />
               +91 9790782986
             </Link>
-            <Link to="/education" className="footer-nav">
+            <Link to="/" className="footer-nav">
               <FaPhone className="phone-icon" />
               +91 6381659676
             </Link>
-            <Link to="/about" className="footer-nav">
+            <Link to="/" className="footer-nav">
               <IoMailSharp className="phone-icon" />
               info@bizcraft.in
             </Link>
