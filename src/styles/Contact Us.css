@@ -36,3 +36,8 @@ a {
   display: flex;
   gap: 15px;
 }
+element.style {
+  position: absolute;
+  left: 0px;
+  top: 47px;
+}
