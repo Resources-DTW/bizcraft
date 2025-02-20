@@ -6,6 +6,15 @@ import mail from "../assests/mail.png";
 import phone from "../assests/phone.png";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import { Button, Form, Input } from "antd";
+import project from "../assests/project.png";
+import enquiry from "../assests/enquiry.png";
+import support from "../assests/support.png";
+import { FaFacebook } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { LuInstagram } from "react-icons/lu";
+import { IoLogoYoutube } from "react-icons/io";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function ContactUs() {
   return (
@@ -135,6 +144,229 @@ export default function ContactUs() {
         </div>
       </div>
 
+      <div className="contact-container">
+        <div className="contactus-box">
+          <div className="contactus-form-container">
+            <Form
+              layout="vertical"
+              // onFinish={onFinish}
+              className="contact-form"
+            >
+              <div className="form-row">
+                <Form.Item
+                  name="firstName"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your first name!",
+                    },
+                  ]}
+                  className="form-item"
+                >
+                  <Input placeholder="First Name" className="form-input" />
+                </Form.Item>
+                <Form.Item
+                  name="lastName"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your last name!",
+                    },
+                  ]}
+                  className="form-item"
+                >
+                  <Input placeholder="Last Name" className="form-input" />
+                </Form.Item>
+              </div>
+              <div className="form-row">
+                <Form.Item
+                  name="email"
+                  rules={[
+                    { required: true, message: "Please enter your email!" },
+                    { type: "email", message: "Please enter a valid email!" },
+                  ]}
+                  className="form-item"
+                >
+                  <Input placeholder="E-mail" className="form-input" />
+                </Form.Item>
+                <Form.Item
+                  name="contactNumber"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your contact number!",
+                    },
+                    {
+                      pattern: /^[0-9]+$/,
+                      message: "Only numeric values are allowed!",
+                    },
+                  ]}
+                  className="form-item"
+                >
+                  <Input placeholder="Contact Number" className="form-input" />
+                </Form.Item>
+              </div>
+              <Form.Item
+                name="message"
+                rules={[
+                  { required: true, message: "Please enter your message!" },
+                ]}
+              >
+                <Input.TextArea
+                  rows={4}
+                  placeholder="Message..."
+                  className="form-textarea"
+                />
+              </Form.Item>
+              <Form.Item>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  style={{
+                    width: "100%",
+                    height: "50px",
+                    borderRadius: "24px",
+                    backgroundColor: "#7453AF",
+                    border: "none",
+                    fontWeight: 600,
+                    fontSize: 16,
+                  }}
+                >
+                  SUBMIT
+                </Button>
+              </Form.Item>
+            </Form>
+          </div>
+          <div
+            style={{
+              width: "100%",
+              textAlign: "start",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              marginLeft: "10%",
+            }}
+          >
+            <p className="contactus-heading">Get In Touch</p>
+            <p
+              style={{
+                fontSize: 34,
+                fontWeight: 600,
+                lineHeight: "48px",
+                color: " #FFFFFF",
+                textTransform: "capitalize",
+                width: "60%",
+              }}
+            >
+              Feel Free to reach out and Connect us!
+            </p>
+            <p
+              style={{
+                fontSize: 14,
+                fontWeight: 400,
+                lineHeight: "22px",
+                color: " #FFFFFF",
+                opacity: "80%",
+                width: "80%",
+                textTransform: "capitalize",
+              }}
+            >
+              Unlock the potential of your digital presence by reaching out to
+              us! For more information on our tailored digital solutions or to
+              discuss your project, don't hesitate to contact Biz Craft. Whether
+              through phone, email, or our convenient contact form, our team is
+              ready to assist you.
+            </p>
+            <p
+              style={{
+                fontSize: 16,
+                fontWeight: 600,
+                lineHeight: "21px",
+                color: " #FFFFFF",
+              }}
+            >
+              Follow US On Social Media:
+            </p>
+            <div className="contactus-nav">
+              <div
+                style={{
+                  backgroundColor: "#7453AF",
+                  width: "46px",
+                  height: "46px",
+                  borderRadius: "30px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Link>
+                  <FaFacebook className="contactus-icon" />
+                </Link>
+              </div>
+              <div
+                style={{
+                  backgroundColor: "#7453AF",
+                  width: "46px",
+                  height: "46px",
+                  borderRadius: "30px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Link>
+                  <FaLinkedin className="contactus-icon" />
+                </Link>
+              </div>
+              <div
+                style={{
+                  backgroundColor: "#7453AF",
+                  width: "46px",
+                  height: "46px",
+                  borderRadius: "30px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Link>
+                  <IoLogoYoutube className="contactus-icon" />
+                </Link>
+              </div>
+              <div
+                style={{
+                  backgroundColor: "#7453AF",
+                  width: "46px",
+                  height: "46px",
+                  borderRadius: "30px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Link>
+                  <LuInstagram className="contactus-icon" />
+                </Link>
+              </div>
+              <div
+                style={{
+                  backgroundColor: "#7453AF",
+                  width: "46px",
+                  height: "46px",
+                  borderRadius: "30px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Link>
+                  <FaXTwitter className="contactus-icon" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   );
