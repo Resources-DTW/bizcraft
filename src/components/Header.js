@@ -1,46 +1,47 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Dropdown, Space } from "antd";
 import "../styles/Header.css";
 import headerlogo from "../assests/headerlogo.png";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
-const solutionsItems = [
-  {
-    key: "1",
-    label: "UI/UX",
-    path: "/education",
-  },
-  {
-    key: "2",
-    label: "Web Design",
-    path: "/education",
-  },
-  {
-    key: "3",
-    label: "Web Development",
-    path: "/about",
-  },
-  {
-    key: "4",
-    label: "E-Commerce",
-    path: "/contact",
-  },
-  {
-    key: "5",
-    label: "Mobile App",
-    path: "/contact",
-  },
-  {
-    key: "6",
-    label: "Digital Marketing",
-    path: "/contact",
-  },
-];
-
 export default function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const solutionsItems = [
+    {
+      key: "1",
+      label: "UI/UX",
+      path: "/blog",
+    },
+    {
+      key: "2",
+      label: "Web Design",
+      onClick: () => navigate("/web-design"),
+    },
+    {
+      key: "3",
+      label: "Web Development",
+      path: "/about",
+    },
+    {
+      key: "4",
+      label: "E-Commerce",
+      path: "/contact",
+    },
+    {
+      key: "5",
+      label: "Mobile App",
+      path: "/contact",
+    },
+    {
+      key: "6",
+      label: "Digital Marketing",
+      path: "/contact",
+    },
+  ];
 
   return (
     <div className="header">

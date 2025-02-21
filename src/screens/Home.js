@@ -44,6 +44,9 @@ import Faq from "../components/Faq";
 import { Form, Input } from "antd";
 import Footer from "../components/Footer";
 import quote from "../assests/quote.png";
+import store from "../assests/store.png";
+import app from "../assests/app.png";
+import marketing from "../assests/marketing.png";
 
 export default function Home() {
   const [isDesktop, setIsDesktop] = useState(true);
@@ -167,6 +170,39 @@ export default function Home() {
         "MERN Stack",
       ],
       image: img10,
+    },
+    {
+      title: "E-Commerce",
+      description: [
+        "Online store setup",
+        "Payment gateway integration",
+        "Inventory and order management",
+        "Product Management",
+        "Digital Marketing",
+      ],
+      image: store,
+    },
+    {
+      title: "Mobile App",
+      description: [
+        "Conceptualization and Planning",
+        "Design and User Interface",
+        "Development",
+        "Testing and Quality",
+        "Maintenance",
+      ],
+      image: app,
+    },
+    {
+      title: "Digital Marketing",
+      description: [
+        "Search engine marketing (SEM)",
+        "Google Ads",
+        "Online advertising",
+        "Content Marketing",
+        "Email Marketing",
+      ],
+      image: marketing,
     },
   ];
 
@@ -611,7 +647,7 @@ export default function Home() {
           {industries.map((indus, index) => (
             <div
               key={index}
-              className="industry-card scroll-animate"
+              className="industry-card"
               style={{
                 marginTop: index % 2 === 0 ? "0px" : "8%",
               }}

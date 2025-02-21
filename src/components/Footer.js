@@ -109,7 +109,7 @@ export default function Footer() {
             <Link to="/services" className="footer-nav">
               UI/UX
             </Link>
-            <Link to="/education" className="footer-nav">
+            <Link to="/web-design" className="footer-nav">
               Web Design
             </Link>
             <Link to="/about" className="footer-nav">
