@@ -1,0 +1,45 @@
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-family: swiper-icons;
+  font-size: var(--swiper-navigation-size);
+  text-transform: none !important;
+  letter-spacing: 0;
+  font-variant: initial;
+  line-height: 1;
+  display: none;
+}
+.swiper-pagination-bullet {
+  width: var(
+    --swiper-pagination-bullet-width,
+    var(--swiper-pagination-bullet-size, 8px)
+  );
+  height: var(
+    --swiper-pagination-bullet-height,
+    var(--swiper-pagination-bullet-size, 8px)
+  );
+  display: inline-block;
+  border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+  background: grey !important;
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.swiper-pagination-bullet-active {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: #ffffff !important;
+}
+.swiper-pagination-bullet-active {
+  width: 20px !important;
+  height: 8px !important;
+  border-radius: 4px !important;
+  background: #ffffff !important;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper-slide.swiper-slide-active {
+  transform: scale(1.1);
+  /* width: 100% !important;
+  height: 500px !important; */
+  /* transition: transform 0.5s ease-in-out, width 0.5s ease-in-out,
+    height 0.5s ease-in-out; */
+}

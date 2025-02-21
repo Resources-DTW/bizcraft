@@ -148,7 +148,7 @@
 
 .custom-dots li button {
   border: none;
-  background-color: #ffffff66;
+  background-color: red;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -157,7 +157,7 @@
 }
 
 .custom-dots li.react-multi-carousel-dot--active button {
-  background-color: #cee531;
+  background-color: red;
   border-radius: 10px;
   width: 30px;
   height: 8px;
@@ -185,6 +185,14 @@
   min-height: 43px;
   opacity: 1;
   cursor: pointer;
+}
+.react-multiple-carousel__arrow--right {
+  right: calc(4% + 1px);
+  display: none;
+}
+.react-multiple-carousel__arrow--left {
+  right: calc(4% + 1px);
+  display: none;
 }
 /* .technology-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
