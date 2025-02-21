@@ -9,26 +9,31 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 const solutionsItems = [
   {
     key: "1",
-    label: "Web Design",
+    label: "UI/UX",
     path: "/education",
   },
   {
     key: "2",
+    label: "Web Design",
+    path: "/education",
+  },
+  {
+    key: "3",
     label: "Web Development",
     path: "/about",
   },
   {
-    key: "3",
+    key: "4",
     label: "E-Commerce",
     path: "/contact",
   },
   {
-    key: "4",
+    key: "5",
     label: "Mobile App",
     path: "/contact",
   },
   {
-    key: "5",
+    key: "6",
     label: "Digital Marketing",
     path: "/contact",
   },
