@@ -14,7 +14,7 @@ export default function Header() {
     {
       key: "1",
       label: "UI/UX",
-      path: "/blog",
+      onClick: () => navigate("/ui-ux-design"),
     },
     {
       key: "2",
