@@ -1,0 +1,79 @@
+.wdev-image img {
+  width: 581px;
+  height: 543px;
+  object-fit: cover;
+  /* margin-top: -5%; */
+}
+.wdev-services-container {
+  margin: 8% 5%;
+}
+.whychoose-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 5%;
+}
+.whychoose-card {
+  background-color: #ffffff14 !important;
+  border-radius: 16px !important;
+  width: 100%;
+  /* height: 260px; */
+  border: none !important;
+}
+.whychoose-icon {
+  width: 60px;
+  height: 60px;
+}
+.whychoose-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 5%;
+}
+.whychoose-card-description {
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff;
+  opacity: 80%;
+  text-transform: capitalize;
+  line-height: 25px;
+}
+.webservice-card {
+  background-color: #0c0d39;
+  border-radius: 16px !important;
+  width: 100%;
+  /* height: 260px; */
+  border: 1.5px solid #ffffff42;
+}
+.webservice-card-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffffff;
+}
+.webservice-card-description {
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: capitalize;
+  line-height: 25px;
+  margin-top: 5%;
+}
+.development-card {
+  background-color: #020331;
+  border-radius: 16px !important;
+  width: 100%;
+  /* height: 260px; */
+  border: none !important;
+}
+.development-icon {
+  width: 30px;
+  height: 32px;
+}
+.development-number {
+  font-size: 84px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}

@@ -106,13 +106,13 @@ export default function Footer() {
 
           <div className="footer-column">
             <p className="footer-title">Services</p>
-            <Link to="/services" className="footer-nav">
+            <Link to="/ui-ux-design" className="footer-nav">
               UI/UX
             </Link>
             <Link to="/web-design" className="footer-nav">
               Web Design
             </Link>
-            <Link to="/about" className="footer-nav">
+            <Link to="/web-development" className="footer-nav">
               Web Development
             </Link>
             <Link to="/contact" className="footer-nav">

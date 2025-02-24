@@ -24,7 +24,7 @@ export default function Header() {
     {
       key: "3",
       label: "Web Development",
-      path: "/about",
+      onClick: () => navigate("/web-development"),
     },
     {
       key: "4",

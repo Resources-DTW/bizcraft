@@ -1,0 +1,79 @@
+.uiux-image img {
+  width: 514px;
+  height: 566px;
+  object-fit: cover;
+}
+.uiux-brand-container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  margin: 0% 5% 0%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  position: relative;
+  z-index: 1;
+}
+.uiux-container {
+  background-color: #ffffff0a;
+  margin: 5% 0%;
+  padding: 10% 5%;
+}
+.uiux-services-content {
+  display: flex;
+  gap: 30px;
+  margin: 5%;
+}
+
+.bizcraft-image {
+  width: 480px;
+  height: 608px;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+  gap: 20px;
+  flex: 1;
+}
+.custom-card {
+  background-color: #ffffff14 !important;
+  border-radius: 16px !important;
+  width: 100%;
+  height: 260px;
+  border: none !important;
+}
+.card-icon {
+  width: 60px;
+  height: 60px;
+  margin-top: -20%;
+}
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  width: 70%;
+  text-align: start;
+  padding-bottom: 5%;
+}
+
+.card-description {
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff;
+  opacity: 80%;
+  text-transform: capitalize;
+  line-height: 25px;
+}
+.uiux-card-container {
+  display: flex;
+  gap: 60px;
+  margin-top: 5%;
+}
+.uiux-card {
+  background-color: #ffffff14 !important;
+  border-radius: 16px !important;
+  width: 80%;
+  /* height: 260px; */
+  border-style: none;
+}
