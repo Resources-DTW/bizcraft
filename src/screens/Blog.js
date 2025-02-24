@@ -76,56 +76,20 @@ export default function Blog() {
   return (
     <div>
       <Header />
-      <div
-        style={{
-          margin: "5%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <p
-          style={{
-            fontSize: 52,
-            fontWeight: 600,
-            color: "#FFFFFF",
-          }}
-        >
+      <div className="blog-header">
+        <p className="blog-title">
           Our Latest <span className="highlight">Blog</span> &{" "}
           <span className="highlight">News</span>
         </p>
-        <p
-          style={{
-            fontSize: 18,
-            fontWeight: 400,
-            textAlign: "center",
-            lineHeight: "27px",
-            color: "#FFFFFF",
-            opacity: "80%",
-            width: "80%",
-          }}
-        >
+        <p className="blog-description">
           Stay updated with our latest blog & news for insights, trends, and
           tech advancements. Explore a wealth of knowledge and stay ahead in the
           digital world with BizCraft.
         </p>
       </div>
 
-      <div
-        style={{
-          marginTop: "10%",
-        }}
-      >
-        <h2
-          style={{
-            textAlign: "center",
-            fontSize: "34px",
-            fontWeight: "600",
-            color: "#fff",
-          }}
-        >
-          Top Blog
-        </h2>
+      <div className="blog-section">
+        <h2 className="blog-heading">Top Blog</h2>
 
         <Swiper
           slidesPerView={3}
@@ -140,15 +104,7 @@ export default function Blog() {
           {topblogPosts.map((post) => (
             <SwiperSlide key={post.id}>
               <div>
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  style={{
-                    width: "90%",
-                    height: "450px",
-                    marginTop: "5%",
-                  }}
-                />
+                <img src={post.image} alt={post.title} className="blog-image" />
                 <p
                   style={{
                     marginTop: "20%",
@@ -164,21 +120,8 @@ export default function Blog() {
         </Swiper>
       </div>
 
-      <div
-        style={{
-          marginTop: "10%",
-        }}
-      >
-        <h2
-          style={{
-            textAlign: "center",
-            fontSize: "34px",
-            fontWeight: "600",
-            color: "#fff",
-          }}
-        >
-          Latest Blog
-        </h2>
+      <div className="blog-section">
+        <h2 className="blog-heading">Latest Blog</h2>
 
         <Swiper
           slidesPerView={3}
@@ -193,15 +136,7 @@ export default function Blog() {
           {latestblogPosts.map((post) => (
             <SwiperSlide key={post.id}>
               <div>
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  style={{
-                    width: "90%",
-                    height: "450px",
-                    marginTop: "5%",
-                  }}
-                />
+                <img src={post.image} alt={post.title} className="blog-image" />
                 <p
                   style={{
                     marginTop: "20%",
