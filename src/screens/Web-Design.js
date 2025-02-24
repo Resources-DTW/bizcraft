@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Button, Card, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import serviceimg from "../assests/Serviceimg.png";
 import "../styles/Webdesign.css";
 import img2 from "../assests/img2.png";
@@ -282,12 +282,18 @@ export default function WebDesign() {
                 }`}
                 onClick={() => setActiveCard(service.id)}
               >
-                <img
-                  src={service.image}
-                  className="service-icon"
-                  alt={service.title}
-                />
-
+                <div
+                  className={`wd-service-icon ${
+                    activeCard === service.id ? "red-bg" : ""
+                  }`}
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    width="60px"
+                    height="60px"
+                  />
+                </div>
                 <p className="service-title">{service.title}</p>
                 <ul className="service-list">
                   {service.description.map((desc, idx) => (

@@ -7,9 +7,6 @@ import phone from "../assests/phone.png";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { Button, Form, Input } from "antd";
-import project from "../assests/project.png";
-import enquiry from "../assests/enquiry.png";
-import support from "../assests/support.png";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { LuInstagram } from "react-icons/lu";
@@ -17,128 +14,53 @@ import { IoLogoYoutube } from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
 
 export default function ContactUs() {
+  const socialMediaLinks = [
+    { name: "Facebook", icon: <FaFacebook />, link: "#" },
+    { name: "LinkedIn", icon: <FaLinkedin />, link: "#" },
+    { name: "YouTube", icon: <IoLogoYoutube />, link: "#" },
+    { name: "Instagram", icon: <LuInstagram />, link: "#" },
+    { name: "Twitter", icon: <FaXTwitter />, link: "#" },
+  ];
+
   return (
     <div>
       <Header />
 
-      <div
-        style={{
-          margin: "5%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <p
-          style={{
-            fontSize: 52,
-            fontWeight: 600,
-            color: "#FFFFFF",
-          }}
-        >
-          Contact Us
-        </p>
-        <p
-          style={{
-            fontSize: 18,
-            fontWeight: 400,
-            textAlign: "center",
-            lineHeight: "27px",
-            color: "#FFFFFF",
-            opacity: "80%",
-            width: "80%",
-          }}
-        >
+      <div className="contact-header">
+        <p className="contact-title">Contact Us</p>
+        <p className="contact-description">
           Reach out to BizCraft for expert solutions and collaborations. Contact
           us today to discuss your unique requirements and discover how our
           innovative team can help propel your business forward.
         </p>
       </div>
 
-      <div style={{ margin: "10% 5%", display: "flex", gap: "30px" }}>
-        <div
-          style={{
-            width: "100%",
-            border: "1px dashed #FFFFFF80",
-            borderRadius: "16px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            color: "#FFFFFF",
-            padding: "3%",
-            gap: "10px",
-          }}
-        >
-          <img src={location} alt="location" width="60px" height="60px" />
-          <p style={{ fontSize: 18, fontWeight: 600 }}>Location Address:</p>
-          <Link
-            to="/"
-            style={{
-              fontSize: 16,
-              fontWeight: 400,
-              opacity: "80%",
-              width: "75%",
-              textAlign: "center",
-              lineHeight: "32px",
-            }}
-          >
+      <div className="contact-details">
+        <div className="contact-card">
+          <img src={location} alt="location" className="contact-icon" />
+          <p className="contact-label">Location Address:</p>
+          <Link to="/" className="contact-link">
             #31/13, 2nd Floor, Burkit Rd, Near CANARA BANK, CIT Nagar East,
             Chennai, Tamil Nadu 600017.
           </Link>
         </div>
-        <div
-          style={{
-            width: "100%",
-            border: "1px dashed #FFFFFF80",
-            borderRadius: "16px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            color: "#FFFFFF",
-            padding: "3%",
-            gap: "10px",
-          }}
-        >
-          <img src={mail} alt="mail" width="60px" height="60px" />
-          <p style={{ fontSize: 18, fontWeight: 600 }}>Email Address:</p>
-          <Link
-            to="/"
-            style={{ fontSize: 16, fontWeight: 400, opacity: "80%", margin: 0 }}
-          >
+        <div className="contact-card">
+          <img src={mail} alt="mail" className="contact-icon" />
+          <p className="contact-label">Email Address:</p>
+          <Link to="/" className="contact-link">
             info@bizcraft.in
           </Link>
-          <Link
-            to="/"
-            style={{ fontSize: 16, fontWeight: 400, opacity: "80%" }}
-          >
+          <Link to="/" className="contact-link">
             info@bizcraft.in
           </Link>
         </div>
-        <div
-          style={{
-            width: "100%",
-            border: "1px dashed #FFFFFF80",
-            borderRadius: "16px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            color: "#FFFFFF",
-            padding: "3%",
-            gap: "10px",
-          }}
-        >
-          <img src={phone} alt="phone" width="60px" height="60px" />
-          <p style={{ fontSize: 18, fontWeight: 600 }}>Phone Number</p>
-          <Link
-            to="/"
-            style={{ fontSize: 16, fontWeight: 400, opacity: "80%", margin: 0 }}
-          >
+        <div className="contact-card">
+          <img src={phone} alt="phone" className="contact-icon" />
+          <p className="contact-label">Phone Number</p>
+          <Link to="/" className="contact-link">
             +91 9790782986
           </Link>
-          <Link
-            to="/"
-            style={{ fontSize: 16, fontWeight: 400, opacity: "80%" }}
-          >
+          <Link to="/" className="contact-link">
             +91 6381659676
           </Link>
         </div>
@@ -237,132 +159,56 @@ export default function ContactUs() {
               </Form.Item>
             </Form>
           </div>
-          <div
-            style={{
-              width: "100%",
-              textAlign: "start",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              marginLeft: "10%",
-            }}
-          >
+          <div className="contactus-info">
             <p className="contactus-heading">Get In Touch</p>
-            <p
-              style={{
-                fontSize: 34,
-                fontWeight: 600,
-                lineHeight: "48px",
-                color: " #FFFFFF",
-                textTransform: "capitalize",
-                width: "60%",
-              }}
-            >
+            <p className="contactus-subtitle">
               Feel Free to reach out and Connect us!
             </p>
-            <p
-              style={{
-                fontSize: 14,
-                fontWeight: 400,
-                lineHeight: "22px",
-                color: " #FFFFFF",
-                opacity: "80%",
-                width: "80%",
-                textTransform: "capitalize",
-              }}
-            >
+            <p className="contactus-text">
               Unlock the potential of your digital presence by reaching out to
               us! For more information on our tailored digital solutions or to
               discuss your project, don't hesitate to contact Biz Craft. Whether
               through phone, email, or our convenient contact form, our team is
               ready to assist you.
             </p>
-            <p
-              style={{
-                fontSize: 16,
-                fontWeight: 600,
-                lineHeight: "21px",
-                color: " #FFFFFF",
-              }}
-            >
-              Follow US On Social Media:
-            </p>
+            <p className="social-label">Follow US On Social Media:</p>
             <div className="contactus-nav">
-              <div
-                style={{
-                  backgroundColor: "#7453AF",
-                  width: "46px",
-                  height: "46px",
-                  borderRadius: "30px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+              {socialMediaLinks.map((item, index) => (
+                <div key={index} className="social-icons">
+                  <Link
+                    to={item.link}
+                    className="contactus-icon"
+                    title={item.name}
+                  >
+                    {item.icon}
+                  </Link>
+                </div>
+              ))}
+              {/* <div className="social-icons">
                 <Link>
                   <FaFacebook className="contactus-icon" />
                 </Link>
               </div>
-              <div
-                style={{
-                  backgroundColor: "#7453AF",
-                  width: "46px",
-                  height: "46px",
-                  borderRadius: "30px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+              <div className="social-icons">
                 <Link>
                   <FaLinkedin className="contactus-icon" />
                 </Link>
               </div>
-              <div
-                style={{
-                  backgroundColor: "#7453AF",
-                  width: "46px",
-                  height: "46px",
-                  borderRadius: "30px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+              <div className="social-icons">
                 <Link>
                   <IoLogoYoutube className="contactus-icon" />
                 </Link>
               </div>
-              <div
-                style={{
-                  backgroundColor: "#7453AF",
-                  width: "46px",
-                  height: "46px",
-                  borderRadius: "30px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+              <div className="social-icons">
                 <Link>
                   <LuInstagram className="contactus-icon" />
                 </Link>
               </div>
-              <div
-                style={{
-                  backgroundColor: "#7453AF",
-                  width: "46px",
-                  height: "46px",
-                  borderRadius: "30px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+              <div className="social-icons">
                 <Link>
                   <FaXTwitter className="contactus-icon" />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

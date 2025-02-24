@@ -46,13 +46,13 @@
 }
 @media (max-width: 1024px) {
   .services-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .services-grid {
-    grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 .wd-testimonial-card1 {
@@ -67,14 +67,24 @@
   border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
-  background-color: #7453af33;
 }
 .wd-testimonial-card1.active {
   background-color: #7453af !important;
   transform: scale(1.05);
 }
+.wd-service-icon {
+  background-color: #7453af;
+  border-radius: 50px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wd-service-icon.red-bg {
+  background-color: #a48dce;
+}
 .industries-container {
   margin: 10% 0%;
-  padding: 5%;
+  padding: 15%;
   background-color: #11123d;
 }
