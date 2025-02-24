@@ -465,12 +465,22 @@ export default function Home() {
             >
               {services.map((service, index) => (
                 <div key={index} className="testimonial-card1">
-                  <img
-                    src={service.image}
-                    className="service-icon"
-                    alt={service.title}
-                  />
-
+                  <div
+                    style={{
+                      backgroundColor: "#7453af",
+                      borderRadius: "50px",
+                      padding: "20px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img
+                      src={service.image}
+                      className="service-icon"
+                      alt={service.title}
+                    />
+                  </div>
                   <p className="service-title">{service.title}</p>
                   <ul className="service-list">
                     {service.description.map((desc, idx) => (

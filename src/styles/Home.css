@@ -375,8 +375,8 @@
   line-height: 46.3px;
 }
 .service-icon {
-  width: 81px;
-  height: 81px;
+  width: 50px;
+  height: 50px;
 }
 
 .service-title {
@@ -521,6 +521,7 @@
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 5%;
+  justify-content: center;
 }
 /* .industry-card {
   position: relative;

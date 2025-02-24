@@ -365,19 +365,8 @@ export default function WebDesign() {
                 src={indus.icon}
                 alt={indus.name}
                 className="industry-icon"
-                style={{ width: "50%", height: "auto" }}
               />
-              <p
-                className="industry-name"
-                style={{
-                  fontSize: 18,
-                  fontWeight: 400,
-                  color: "#FFFFFF",
-                  margin: 0,
-                }}
-              >
-                {indus.name}
-              </p>
+              <p className="industry-name">{indus.name}</p>
             </div>
           ))}
         </div>
