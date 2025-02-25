@@ -16,8 +16,8 @@
 }
 .uiux-container {
   background-color: #ffffff0a;
-  margin: 5% 0%;
-  padding: 10% 5%;
+  margin: 14% 0%;
+  padding: 8% 5%;
 }
 .uiux-services-content {
   display: flex;
@@ -31,8 +31,8 @@
 }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-template-rows: repeat(2, auto); /* 2 rows */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
   gap: 20px;
   flex: 1;
 }
@@ -76,4 +76,148 @@
   width: 80%;
   /* height: 260px; */
   border-style: none;
+}
+
+/* Timeline.css */
+.timeline-container {
+  color: white;
+  margin: 5% 0%;
+}
+
+.timeline-title {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 10%;
+  text-align: center;
+}
+
+.timeline-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  width: 80%;
+  height: 5px;
+  background-color: #7453af;
+  z-index: 1;
+  border-radius: 20px;
+}
+
+.timeline-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  position: relative;
+  z-index: 2;
+  gap: 50px;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  position: relative;
+  margin: 50px 30px;
+}
+
+/* Positioning for Top Items */
+.timeline-item.top {
+  transform: translateY(-80px);
+}
+
+/* Positioning for Bottom Items */
+.timeline-item.bottom {
+  transform: translateY(80px);
+}
+
+/* Connector Lines */
+.timeline-connector {
+  width: 3px;
+  height: 105px;
+  background-color: gray;
+  position: absolute;
+  top: 100%;
+}
+
+/* Adjust connector for bottom items */
+.timeline-item.bottom .timeline-connector {
+  top: -100px;
+}
+
+.timeline-content {
+  background-color: #ffffff14 !important;
+  border-radius: 16px !important;
+  width: 382px !important;
+  height: 230px;
+  border: none !important;
+  margin: 10%;
+}
+.timeline-p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  /* width: 70%; */
+  text-align: start;
+  /* padding-bottom: 5%; */
+  /* margin: 0; */
+}
+
+.timeline-description {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  opacity: 80%;
+  text-transform: capitalize;
+  line-height: 25px;
+}
+/* .timeline-circle {
+  width: 16px;
+  height: 16px;
+  background-color: #7d7d7d;
+  border-radius: 50%;
+  border: 1px solid #ffffff8f;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}*/
+.circle {
+  background-color: #7453af;
+  border-radius: 50%;
+  border: 1px solid #ffffff8f;
+  position: relative;
+  z-index: 2;
+  width: 5px;
+  height: 5px;
+}
+.timeline-circle {
+  width: 16px;
+  height: 16px;
+  background-color: #7d7d7d;
+  border-radius: 50%;
+  border: 1px solid #ffffff8f;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-circle {
+  position: relative;
+  top: 290px;
+}
+
+.bottom-circle {
+  position: relative;
+  bottom: 290px;
 }

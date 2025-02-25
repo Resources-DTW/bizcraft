@@ -23,6 +23,11 @@ import project from "../assests/project.png";
 import enquiry from "../assests/enquiry.png";
 import support from "../assests/support.png";
 import works from "../assests/works.png";
+import discovery from "../assests/discovery.png";
+import info from "../assests/info.png";
+import ui from "../assests/ui.png";
+import research from "../assests/research.png";
+import prototype from "../assests/prototype.png";
 
 export default function UiUxDesign() {
   const whyChooseData = [
@@ -76,6 +81,44 @@ export default function UiUxDesign() {
       title: "Research and Strategy",
       description:
         "We conduct exhaustive research to understand the target users, competitive strategies, and design trends in your industry. We strategize to create a robust and impactful website that is intelligible and credible.",
+    },
+  ];
+
+  const timelineData = [
+    {
+      title: "DISCOVERY WORKSHOP",
+      description:
+        "With an in-depth study of the business goals, product positioning, end-user needs, and potential usability limitations, we define the scope of the project. This is followed by a detailed design plan.",
+      image: discovery,
+      position: "top",
+    },
+    {
+      title: "INFORMATION ARCHITECTURE",
+      description:
+        "The information architecture evolves from the discovery workshop and research initiatives. We construct a design framework based on the data substantiated through research.",
+      image: info,
+      position: "top",
+    },
+    {
+      title: "USER INTERFACE",
+      description:
+        "We blend aesthetically pleasing visual layouts with cleverly placed branding elements. We heighten the user experience while supplementing the marketing plans.",
+      image: ui,
+      position: "top",
+    },
+    {
+      title: "RESEARCH AND EVALUATION",
+      description:
+        "We conduct a UX audit to evaluate the crucial components. With a detailed analysis of the user segment and competitive products, we formulate a well-grounded design strategy.",
+      image: research,
+      position: "bottom",
+    },
+    {
+      title: "PROTOTYPING",
+      description:
+        "Precise and interactive prototypes make it easy for the client to evaluate the design. We prepare mockups for all core user-facing interfaces, offering both low-fidelity and high-fidelity options.",
+      image: prototype,
+      position: "bottom",
     },
   ];
 
@@ -318,6 +361,43 @@ export default function UiUxDesign() {
                 <p className="card-title">{item.title}</p>
                 <p className="card-description">{item.description}</p>
               </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="timeline-container">
+        <h2 className="timeline-title">Our UX/UI Design Approach</h2>
+        <div className="timeline-wrapper">
+          <div className="timeline-line"></div>
+          <div className="timeline-items">
+            {timelineData.map((item, index) => (
+              <div
+                key={index}
+                className={`timeline-item ${item.position}`}
+                style={{ margin: "0 45px" }}
+              >
+                {item.position === "top" && (
+                  <div className="timeline-circle top-circle">
+                    <div className="circle"></div>
+                  </div>
+                )}
+                <Card className="timeline-content">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="card-icon"
+                  />
+                  <p className="timeline-p">{item.title}</p>
+                  <p className="timeline-description">{item.description}</p>
+                </Card>
+                {item.position === "bottom" && (
+                  <div className="timeline-circle bottom-circle">
+                    <div className="circle"></div>
+                  </div>
+                )}
+                <div className="timeline-connector"></div>
+              </div>
             ))}
           </div>
         </div>
