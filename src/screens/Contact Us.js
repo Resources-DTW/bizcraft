@@ -26,16 +26,16 @@ export default function ContactUs() {
     <div>
       <Header />
 
-      <div className="contact-header">
+      {/* <div className="contact-header">
         <p className="contact-title">Contact Us</p>
         <p className="contact-description">
           Reach out to BizCraft for expert solutions and collaborations. Contact
           us today to discuss your unique requirements and discover how our
           innovative team can help propel your business forward.
         </p>
-      </div>
+      </div> */}
 
-      <div className="contact-details">
+      {/* <div className="contact-details">
         <div className="contact-card">
           <img src={location} alt="location" className="contact-icon" />
           <p className="contact-label">Location Address:</p>
@@ -64,9 +64,9 @@ export default function ContactUs() {
             +91 6381659676
           </Link>
         </div>
-      </div>
+      </div> */}
 
-      <div className="contact-container">
+      {/* <div className="contact-container">
         <div className="contactus-box">
           <div className="contactus-form-container">
             <Form
@@ -183,8 +183,8 @@ export default function ContactUs() {
                     {item.icon}
                   </Link>
                 </div>
-              ))}
-              {/* <div className="social-icons">
+              ))} */}
+      {/* <div className="social-icons">
                 <Link>
                   <FaFacebook className="contactus-icon" />
                 </Link>
@@ -209,12 +209,12 @@ export default function ContactUs() {
                   <FaXTwitter className="contactus-icon" />
                 </Link>
               </div> */}
-            </div>
+      {/* </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <iframe
+      {/* <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7774.042003263787!2d80.2253517508507!3d13.034334527370943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52675c20776c0d%3A0x1cb53c7de4f2091d!2sBiz%20Craft%20Creative%20Services!5e0!3m2!1sen!2sin!4v1740036116064!5m2!1sen!2sin"
         width="100%"
         height="400px"
@@ -225,9 +225,9 @@ export default function ContactUs() {
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+      ></iframe> */}
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

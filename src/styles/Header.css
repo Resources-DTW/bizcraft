@@ -19,6 +19,11 @@ body {
   padding: 1% 5%;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .header {
+    padding: 5%;
+  }
+}
 .header-logo img {
   width: 160px;
   height: 60px;
@@ -35,4 +40,32 @@ body {
 }
 a {
   text-decoration: none !important;
+}
+.menu-icon {
+  display: none;
+}
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    color: white !important;
+  }
+
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    padding: 20px;
+    z-index: 100;
+    background-color: #020331 !important;
+  }
+
+  .header-nav.active {
+    display: flex;
+    color: #ffffff !important;
+    padding-right: 10%;
+    width: 100%;
+    height: 550px;
+  }
 }

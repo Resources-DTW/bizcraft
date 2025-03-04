@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Dropdown, Space } from "antd";
 import "../styles/Header.css";
 import headerlogo from "../assests/headerlogo.png";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const navigate = useNavigate();
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   const solutionsItems = [
     {
@@ -48,11 +64,22 @@ export default function Header() {
       <div className="header-logo">
         <img src={headerlogo} alt="logo" />
       </div>
-      <div className="header-nav">
-        <Link to="/" className="nav-link">
+
+      {isMobile && (
+        <div className="menu-icon" onClick={toggleMenu}>
+          {menuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
+        </div>
+      )}
+
+      <div className={`header-nav ${menuOpen ? "active" : ""}`}>
+        <Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>
           Home
         </Link>
-        <Link to="/about-us" className="nav-link">
+        <Link
+          to="/about-us"
+          className="nav-link"
+          onClick={() => setMenuOpen(false)}
+        >
           About Us
         </Link>
         <Dropdown
@@ -62,7 +89,13 @@ export default function Header() {
           onOpenChange={(open) => setSolutionsOpen(open)}
         >
           <a onClick={(e) => e.preventDefault()} className="nav-link">
-            <Space>
+            <Space
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
               Services
               <span
                 style={{
@@ -70,6 +103,8 @@ export default function Header() {
                   alignItems: "center",
                   justifyContent: "center",
                   color: "#ffffff",
+                  fontSize: 20,
+                  fontWeight: 600,
                 }}
               >
                 {solutionsOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
@@ -78,30 +113,60 @@ export default function Header() {
           </a>
         </Dropdown>
 
-        <Link to="/blog" className="nav-link">
+        <Link
+          to="/blog"
+          className="nav-link"
+          onClick={() => setMenuOpen(false)}
+        >
           Blog
         </Link>
-        <Link to="/contact-us" className="nav-link">
+        <Link
+          to="/contact-us"
+          className="nav-link"
+          onClick={() => setMenuOpen(false)}
+        >
           Contact Us
         </Link>
+        {isMobile && menuOpen && (
+          <div>
+            <Button
+              style={{
+                fontSize: 14,
+                fontWeight: 600,
+                backgroundColor: "#FFFFFF1F",
+                borderRadius: "108px",
+                width: "134px",
+                height: "44px",
+                color: "#FFFFFF",
+                borderStyle: "none",
+              }}
+            >
+              <BiSolidPhoneCall style={{ width: "24px", height: "24px" }} />
+              CALL US
+            </Button>
+          </div>
+        )}
       </div>
-      <div>
-        <Button
-          style={{
-            fontSize: 14,
-            fontWeight: 600,
-            backgroundColor: "#FFFFFF1F",
-            borderRadius: "108px",
-            width: "134px",
-            height: "44px",
-            color: "#FFFFFF",
-            borderStyle: "none",
-          }}
-        >
-          <BiSolidPhoneCall style={{ width: "24px", height: "24px" }} />
-          CALL US
-        </Button>
-      </div>
+
+      {!isMobile && (
+        <div>
+          <Button
+            style={{
+              fontSize: 14,
+              fontWeight: 600,
+              backgroundColor: "#FFFFFF1F",
+              borderRadius: "108px",
+              width: "134px",
+              height: "44px",
+              color: "#FFFFFF",
+              borderStyle: "none",
+            }}
+          >
+            <BiSolidPhoneCall style={{ width: "24px", height: "24px" }} />
+            CALL US
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
