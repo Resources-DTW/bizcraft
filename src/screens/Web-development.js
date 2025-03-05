@@ -314,12 +314,8 @@ export default function Webdevelopment() {
           <Button
             className="sparkle-text"
             style={{
-              fontSize: 14,
-              fontWeight: 600,
               backgroundColor: "#7453AF",
               borderRadius: "108px",
-              width: "134px",
-              height: "55px",
               color: "#FFFFFF",
               borderStyle: "none",
             }}
@@ -332,16 +328,16 @@ export default function Webdevelopment() {
         </div>
       </div>
 
-      <div className="wd-brand-container">
+      {/* <div className="wd-brand-container">
         <img src={img2} alt="" className="brand-logo small" />
         <img src={img3} alt="" className="brand-logo small" />
         <img src={img4} alt="" className="brand-logo large" />
         <img src={img5} alt="" className="brand-logo large" />
         <img src={img6} alt="" className="brand-logo small" />
         <img src={img7} alt="" className="brand-logo large" />
-      </div>
+      </div> */}
 
-      <div className="wdev-services-container">
+      {/* <div className="wdev-services-container">
         <p className="wd-services-heading">
           Why Choose <span className="highlight">BizCraft?</span>
         </p>
@@ -360,9 +356,9 @@ export default function Webdevelopment() {
             </Card>
           ))}
         </div>
-      </div>
+      </div> */}
 
-      <div style={{ backgroundColor: "#FFFFFF0A", padding: "5%" }}>
+      {/* <div style={{ backgroundColor: "#FFFFFF0A", padding: "5%" }}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <p
             style={{
@@ -407,9 +403,9 @@ export default function Webdevelopment() {
             </Card>
           ))}
         </div>
-      </div>
+      </div> */}
 
-      <div className="wdev-services-container">
+      {/* <div className="wdev-services-container">
         <p className="wd-services-heading">
           Our <span className="highlight">Development</span> Process
         </p>
@@ -429,13 +425,12 @@ export default function Webdevelopment() {
             </Card>
           ))}
         </div>
-      </div>
+      </div> */}
 
-      <div className="technologies-container">
+      {/* <div className="technologies-container">
         <p className="technologies-title">TECHNOLOGIES</p>
         <p className="technologies-heading">Technologies We Work With</p>
 
-        {/* Category Buttons */}
         <div className="category-buttons">
           {categories.map((category) => (
             <button
@@ -450,7 +445,6 @@ export default function Webdevelopment() {
           ))}
         </div>
 
-        {/* Technologies Grid */}
         <div className="technologies-grid">
           {technologies[activeCategory].map((tech, index) => (
             <div
@@ -467,9 +461,9 @@ export default function Webdevelopment() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
-      <div className="industries-container">
+      {/* <div className="industries-container">
         <p className="technologies-title">INDUSTRIES</p>
         <p className="industries-heading">
           Our Solutions Meet
@@ -493,9 +487,9 @@ export default function Webdevelopment() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
-      <div>
+      {/* <div>
         <div className="technologies-container">
           <p className="testimonials-title">TESTIMONIALS</p>
           <p className="testimonials-heading">
@@ -591,9 +585,9 @@ export default function Webdevelopment() {
             ))}
           </Carousel>
         </div>
-      </div>
+      </div> */}
 
-      <div className="work-section">
+      {/* <div className="work-section">
         <p className="faq-title">OUR WORKS</p>
         <div className="works-image-container">
           <img src={works} className="works-image" alt="" />
@@ -615,9 +609,9 @@ export default function Webdevelopment() {
             Explore Our Portfolio
           </Button>
         </div>
-      </div>
+      </div> */}
 
-      <div className="contact-container">
+      {/* <div className="contact-container">
         <p className="faq-title">CONTACT US</p>
         <div className="contact-box">
           <p className="contact-heading">Get In Touch</p>
@@ -746,7 +740,7 @@ export default function Webdevelopment() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </div>
   );

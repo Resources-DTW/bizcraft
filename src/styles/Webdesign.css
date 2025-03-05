@@ -6,12 +6,28 @@
   margin-bottom: 0;
   line-height: 72.8px;
 }
+@media (max-width: 768px) {
+  .wd-title {
+    font-size: 24px;
+    width: 100%;
+    line-height: 33px;
+    text-align: center;
+  }
+}
 .wd-description {
   font-size: 18px;
   font-weight: 400;
   color: #ffffff;
   width: 80%;
   line-height: 28px;
+}
+@media (max-width: 768px) {
+  .wd-description {
+    font-size: 15px;
+    width: 100%;
+    line-height: 22px;
+    text-align: center;
+  }
 }
 .service-image img {
   width: 628px;

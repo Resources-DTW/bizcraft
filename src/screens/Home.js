@@ -392,13 +392,33 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="brand-container">
+      {/* <div className="brand-container">
         <img src={img2} alt="" className="brand-logo small" />
         <img src={img3} alt="" className="brand-logo small" />
         <img src={img4} alt="" className="brand-logo large" />
         <img src={img5} alt="" className="brand-logo large" />
         <img src={img6} alt="" className="brand-logo small" />
         <img src={img7} alt="" className="brand-logo large" />
+      </div> */}
+
+      <div className="brand-container">
+        <div className="brand-marquee">
+          <div className="brand-track">
+            <img src={img2} alt="" className="brand-logo small" />
+            <img src={img3} alt="" className="brand-logo small" />
+            <img src={img4} alt="" className="brand-logo large" />
+            <img src={img5} alt="" className="brand-logo large" />
+            <img src={img6} alt="" className="brand-logo small" />
+            <img src={img7} alt="" className="brand-logo large" />
+
+            <img src={img2} alt="" className="brand-logo small" />
+            <img src={img3} alt="" className="brand-logo small" />
+            <img src={img4} alt="" className="brand-logo large" />
+            <img src={img5} alt="" className="brand-logo large" />
+            <img src={img6} alt="" className="brand-logo small" />
+            <img src={img7} alt="" className="brand-logo large" />
+          </div>
+        </div>
       </div>
 
       <div className="services-container">
