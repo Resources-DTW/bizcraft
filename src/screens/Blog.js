@@ -92,14 +92,24 @@ export default function Blog() {
         <h2 className="blog-heading">Top Blog</h2>
 
         <Swiper
-          slidesPerView={3}
           spaceBetween={30}
           loop={true}
           navigation={true}
           pagination={{ clickable: true }}
           modules={[Pagination, Navigation]}
           centeredSlides={true}
-          style={{ marginTop: "5%" }}
+          className="swiper-class"
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+            },
+            600: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
         >
           {topblogPosts.map((post) => (
             <SwiperSlide key={post.id}>
@@ -124,14 +134,24 @@ export default function Blog() {
         <h2 className="blog-heading">Latest Blog</h2>
 
         <Swiper
-          slidesPerView={3}
           spaceBetween={30}
           loop={true}
           navigation={true}
           pagination={{ clickable: true }}
           modules={[Pagination, Navigation]}
           centeredSlides={true}
-          style={{ marginTop: "5%" }}
+          className="swiper-class"
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+            },
+            600: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
         >
           {latestblogPosts.map((post) => (
             <SwiperSlide key={post.id}>
@@ -158,15 +178,9 @@ export default function Blog() {
           <img src={works} className="works-image" alt="" />
 
           <Button
+            className="explore-portfolio-btn"
             style={{
-              position: "absolute",
-              zIndex: 1,
-              fontSize: 22,
-              fontWeight: 400,
               backgroundColor: "transparent",
-              borderRadius: "8px",
-              width: "377px",
-              height: "70px",
               color: "#FFFFFF",
               border: "1px solid #FFFFFF",
             }}

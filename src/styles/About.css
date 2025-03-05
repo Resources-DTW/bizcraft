@@ -255,3 +255,8 @@
 .work-section {
   margin: 10% 0%;
 }
+@media (max-width: 768px) {
+  .work-section {
+    margin: 20% 0%;
+  }
+}
