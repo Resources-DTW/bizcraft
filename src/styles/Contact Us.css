@@ -105,6 +105,8 @@ a {
 @media (max-width: 768px) {
   .contactus-box {
     flex-direction: column;
+    background-color: transparent;
+    gap: 30px;
   }
 }
 .contactus-info {
@@ -118,6 +120,7 @@ a {
 @media (max-width: 768px) {
   .contactus-info {
     order: 1;
+    margin-left: 0%;
   }
 }
 .contactus-heading {
@@ -125,7 +128,7 @@ a {
   font-weight: 600;
   color: #7453af;
   text-align: center;
-  letter-spacing: 10px;
+  letter-spacing: 8px;
   text-transform: uppercase;
 }
 @media (max-width: 768px) {
@@ -165,6 +168,7 @@ a {
     width: 100%;
     text-align: center;
     line-height: 21px;
+    font-size: 13px;
   }
 }
 .social-label {
@@ -227,6 +231,8 @@ a {
 @media (max-width: 768px) {
   .contactus-nav {
     align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 }
 element.style {

@@ -223,7 +223,7 @@ export default function ContactUs() {
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

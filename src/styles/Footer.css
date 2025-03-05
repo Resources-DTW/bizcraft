@@ -5,14 +5,36 @@
   font-size: 20px;
   font-weight: 600;
   color: #ffffff;
-  margin-top: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
+
 .footer-column {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
+  margin-top: 3%;
+}
+@media (max-width: 768px) {
+  .footer-column {
+    order: 1;
+  }
 }
 .footer-nav {
+  text-decoration: none;
+  color: #ffffff;
+  display: flex;
+  gap: 15px;
+}
+@media (max-width: 768px) {
+  .footer-nav {
+    gap: 25px;
+  }
+}
+.footer-phone {
   text-decoration: none;
   color: #ffffff;
   font-size: 16px;
@@ -41,12 +63,23 @@
   align-items: center;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .footer-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
 .footer-subscribe-text {
   font-size: 20px;
   font-weight: 600;
   color: #ffffff;
 }
-
+@media (max-width: 768px) {
+  .footer-subscribe-text {
+    font-size: 16px;
+  }
+}
 .footer-subscribe-box {
   display: flex;
   gap: 20px;
@@ -60,6 +93,7 @@
   color: white;
   background-color: #1b1c46;
 }
+
 /* :where(.css-dev-only-do-not-override-cdzvx5).ant-input-outlined:hover {
   border-color: #ffffff;
   background-color: #1b1c46;
@@ -82,18 +116,39 @@
   justify-content: space-between;
   margin-top: 5%;
 }
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .footer-section {
+    order: 2;
+    margin-top: 10%;
+  }
+}
 .footer-section {
   width: 30%;
 }
 .footer-icon {
   width: 30px;
   height: 30px;
-  color: #ffffff;
+  color: #ffffff !important;
 }
-
+@media (max-width: 768px) {
+  .footer-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
 .footer-address-text {
   width: 70%;
   line-height: 32px;
+}
+@media (max-width: 768px) {
+  .footer-address-text {
+    width: 300%;
+  }
 }
 .phone-icon {
   width: 20px;
@@ -103,9 +158,29 @@
   background-color: #ffffff0f;
   padding: 1% 0%;
 }
+@media (max-width: 768px) {
+  .footer-bottom {
+    padding: 3% 0%;
+  }
+}
+
 .footer-copyright {
   font-size: 14;
   font-weight: 400;
   color: #ffffff;
   text-align: center;
+  margin-bottom: 0;
+}
+.footer-content-dropdown {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-content-dropdown.active {
+  display: flex;
+  margin-top: 0;
+}
+.footer-toggle-icon {
+  color: #ffffff;
+  font-size: xx-large;
 }
