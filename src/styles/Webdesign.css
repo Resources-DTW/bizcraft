@@ -46,12 +46,25 @@
   position: relative;
   z-index: 1;
 }
+@media (max-width: 768px) {
+  .wd-brand-container {
+    margin: 5% 0% 0px;
+    border-radius: 0%;
+  }
+}
 .wd-services-heading {
   color: #ffffff;
   font-size: 34px;
   font-weight: 600;
   line-height: 46.3px;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .wd-services-heading {
+    font-size: 24px;
+    line-height: 56px;
+    text-align: center;
+  }
 }
 .services-grid {
   display: grid;
@@ -103,4 +116,9 @@
   margin: 10% 0%;
   padding: 5% 0%;
   background-color: #11123d;
+}
+@media (max-width: 768px) {
+  .industries-container {
+    padding: 10% 0%;
+  }
 }

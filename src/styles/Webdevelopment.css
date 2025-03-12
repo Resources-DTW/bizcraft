@@ -4,6 +4,14 @@
   object-fit: cover;
   /* margin-top: -5%; */
 }
+@media (max-width: 768px) {
+  .wdev-image img {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+    /* margin-top: 5%; */
+  }
+}
 .wdev-services-container {
   margin: 8% 5%;
 }
@@ -12,6 +20,11 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 5%;
+}
+@media (max-width: 768px) {
+  .whychoose-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .whychoose-card {
   background-color: #ffffff14 !important;
@@ -24,11 +37,22 @@
   width: 60px;
   height: 60px;
 }
+@media (max-width: 768px) {
+  .whychoose-icon {
+    width: 56px;
+    height: 56px;
+  }
+}
 .whychoose-card-title {
   font-size: 20px;
   font-weight: 600;
   color: #ffffff;
   margin-top: 5%;
+}
+@media (max-width: 768px) {
+  .whychoose-card-title {
+    font-size: 18px;
+  }
 }
 .whychoose-card-description {
   font-size: 15px;
@@ -37,6 +61,54 @@
   opacity: 80%;
   text-transform: capitalize;
   line-height: 25px;
+}
+@media (max-width: 768px) {
+  .whychoose-card-description {
+    font-size: 14px;
+  }
+}
+
+.webdev-container {
+  background-color: #ffffff0a;
+  padding: 5%;
+}
+.webdev-header {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .webdev-header {
+    flex-direction: column;
+  }
+}
+.webdev-title {
+  font-size: 34px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 46px;
+  width: 30%;
+}
+@media (max-width: 768px) {
+  .webdev-title {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+  }
+}
+.webdev-description {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 25px;
+  width: 45%;
+  opacity: 80%;
+}
+@media (max-width: 768px) {
+  .webdev-description {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+  }
 }
 .webservice-card {
   background-color: #0c0d39;
@@ -50,6 +122,11 @@
   font-weight: 400;
   color: #ffffff;
 }
+@media (max-width: 768px) {
+  .webservice-card-title {
+    font-size: 18px;
+  }
+}
 .webservice-card-description {
   font-size: 15px;
   font-weight: 400;
@@ -57,6 +134,11 @@
   text-transform: capitalize;
   line-height: 25px;
   margin-top: 5%;
+}
+@media (max-width: 768px) {
+  .webservice-card-description {
+    font-size: 14px;
+  }
 }
 .development-card {
   background-color: #020331;

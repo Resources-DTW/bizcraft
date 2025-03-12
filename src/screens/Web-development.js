@@ -328,16 +328,27 @@ export default function Webdevelopment() {
         </div>
       </div>
 
-      {/* <div className="wd-brand-container">
-        <img src={img2} alt="" className="brand-logo small" />
-        <img src={img3} alt="" className="brand-logo small" />
-        <img src={img4} alt="" className="brand-logo large" />
-        <img src={img5} alt="" className="brand-logo large" />
-        <img src={img6} alt="" className="brand-logo small" />
-        <img src={img7} alt="" className="brand-logo large" />
-      </div> */}
+      <div className="wd-brand-container">
+        <div className="brand-marquee">
+          <div className="brand-track">
+            <img src={img2} alt="" className="brand-logo small" />
+            <img src={img3} alt="" className="brand-logo small" />
+            <img src={img4} alt="" className="brand-logo large" />
+            <img src={img5} alt="" className="brand-logo large" />
+            <img src={img6} alt="" className="brand-logo small" />
+            <img src={img7} alt="" className="brand-logo large" />
 
-      {/* <div className="wdev-services-container">
+            <img src={img2} alt="" className="brand-logo small" />
+            <img src={img3} alt="" className="brand-logo small" />
+            <img src={img4} alt="" className="brand-logo large" />
+            <img src={img5} alt="" className="brand-logo large" />
+            <img src={img6} alt="" className="brand-logo small" />
+            <img src={img7} alt="" className="brand-logo large" />
+          </div>
+        </div>
+      </div>
+
+      <div className="wdev-services-container">
         <p className="wd-services-heading">
           Why Choose <span className="highlight">BizCraft?</span>
         </p>
@@ -356,31 +367,14 @@ export default function Webdevelopment() {
             </Card>
           ))}
         </div>
-      </div> */}
+      </div>
 
-      {/* <div style={{ backgroundColor: "#FFFFFF0A", padding: "5%" }}>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <p
-            style={{
-              fontSize: 34,
-              fontWeight: 600,
-              lineHeight: "46px",
-              color: "#ffffff",
-              width: "30%",
-            }}
-          >
+      <div className="webdev-container">
+        <div className="webdev-header">
+          <p className="webdev-title">
             Our <span className="highlight">Web Development</span> Services
           </p>
-          <p
-            style={{
-              fontSize: 18,
-              fontWeight: 500,
-              lineHeight: "25px",
-              color: "#ffffff",
-              width: "45%",
-              opacity: "80%",
-            }}
-          >
+          <p className="webdev-description">
             From small businesses to large enterprises, we offer web development
             services designed to elevate your brand and meet your unique goals.
           </p>
@@ -403,9 +397,9 @@ export default function Webdevelopment() {
             </Card>
           ))}
         </div>
-      </div> */}
+      </div>
 
-      {/* <div className="wdev-services-container">
+      <div className="wdev-services-container">
         <p className="wd-services-heading">
           Our <span className="highlight">Development</span> Process
         </p>
@@ -425,9 +419,9 @@ export default function Webdevelopment() {
             </Card>
           ))}
         </div>
-      </div> */}
+      </div>
 
-      {/* <div className="technologies-container">
+      <div className="technologies-container">
         <p className="technologies-title">TECHNOLOGIES</p>
         <p className="technologies-heading">Technologies We Work With</p>
 
@@ -448,9 +442,8 @@ export default function Webdevelopment() {
         <div className="technologies-grid">
           {technologies[activeCategory].map((tech, index) => (
             <div
-              className="technology-card"
+              className={`technology-card ${index % 2 === 0 ? "" : "odd-card"}`}
               key={index}
-              style={{ marginTop: index % 2 === 0 ? "0px" : "4%" }}
             >
               <img
                 src={tech.icon}
@@ -461,22 +454,20 @@ export default function Webdevelopment() {
             </div>
           ))}
         </div>
-      </div> */}
+      </div>
 
-      {/* <div className="industries-container">
+      <div className="industries-container">
         <p className="technologies-title">INDUSTRIES</p>
         <p className="industries-heading">
-          Our Solutions Meet
-          <br /> The Digital Requirements Of These Industries
+          Our Solutions Meet The Digital Requirements Of These Industries
         </p>
         <div className="industries-grid">
           {industries.map((indus, index) => (
             <div
               key={index}
-              className="industry-card scroll-animate"
-              style={{
-                marginTop: index % 2 === 0 ? "0px" : "8%",
-              }}
+              className={`industry-card scroll-animate ${
+                index % 2 !== 0 ? "odd-industry" : ""
+              }`}
             >
               <img
                 src={indus.icon}
@@ -487,24 +478,16 @@ export default function Webdevelopment() {
             </div>
           ))}
         </div>
-      </div> */}
+      </div>
 
-      {/* <div>
+      <div>
         <div className="technologies-container">
           <p className="testimonials-title">TESTIMONIALS</p>
           <p className="testimonials-heading">
             What’s Our Client Opinion About{" "}
             <span className="highlight">Biz Craft</span>
           </p>
-          <p
-            style={{
-              color: "#FFFFFF",
-              fontSize: 24,
-              fontWeight: 500,
-              opacity: "80%",
-              marginBottom: "-10%",
-            }}
-          >
+          <p className="testimonials-client">
             Over 450<sup>+</sup> Satisfied Clients And Growing
           </p>
         </div>
@@ -579,39 +562,33 @@ export default function Webdevelopment() {
                       {testimonial.designation}
                     </p>
                   </div>
-                  <img src={quote} alt="quote" width="45px" height="40px" />
+                  <img src={quote} alt="quote" className="quote" />
                 </div>
               </div>
             ))}
           </Carousel>
         </div>
-      </div> */}
+      </div>
 
-      {/* <div className="work-section">
+      <div className="work-section">
         <p className="faq-title">OUR WORKS</p>
         <div className="works-image-container">
           <img src={works} className="works-image" alt="" />
 
           <Button
+            className="explore-portfolio-btn"
             style={{
-              position: "absolute",
-              zIndex: 1,
-              fontSize: 22,
-              fontWeight: 400,
               backgroundColor: "transparent",
               borderRadius: "8px",
-              width: "377px",
-              height: "70px",
               color: "#FFFFFF",
-              border: "1px solid #FFFFFF",
             }}
           >
             Explore Our Portfolio
           </Button>
         </div>
-      </div> */}
+      </div>
 
-      {/* <div className="contact-container">
+      <div className="contact-container">
         <p className="faq-title">CONTACT US</p>
         <div className="contact-box">
           <p className="contact-heading">Get In Touch</p>
@@ -740,7 +717,7 @@ export default function Webdevelopment() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       <Footer />
     </div>
   );
