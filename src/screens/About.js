@@ -184,12 +184,8 @@ export default function About() {
           <Button
             className="sparkle-text"
             style={{
-              fontSize: 14,
-              fontWeight: 600,
               backgroundColor: "#7453AF",
               borderRadius: "108px",
-              width: "134px",
-              height: "55px",
               color: "#FFFFFF",
               borderStyle: "none",
             }}
@@ -200,12 +196,23 @@ export default function About() {
       </div>
 
       <div className="brand-container-a2">
-        <img src={img2} alt="" className="brand-logo small" />
-        <img src={img3} alt="" className="brand-logo small" />
-        <img src={img4} alt="" className="brand-logo large" />
-        <img src={img5} alt="" className="brand-logo large" />
-        <img src={img6} alt="" className="brand-logo small" />
-        <img src={img7} alt="" className="brand-logo large" />
+        <div className="brand-marquee">
+          <div className="brand-track">
+            <img src={img2} alt="" className="brand-logo small" />
+            <img src={img3} alt="" className="brand-logo small" />
+            <img src={img4} alt="" className="brand-logo large" />
+            <img src={img5} alt="" className="brand-logo large" />
+            <img src={img6} alt="" className="brand-logo small" />
+            <img src={img7} alt="" className="brand-logo large" />
+
+            <img src={img2} alt="" className="brand-logo small" />
+            <img src={img3} alt="" className="brand-logo small" />
+            <img src={img4} alt="" className="brand-logo large" />
+            <img src={img5} alt="" className="brand-logo large" />
+            <img src={img6} alt="" className="brand-logo small" />
+            <img src={img7} alt="" className="brand-logo large" />
+          </div>
+        </div>
       </div>
 
       <div className="container-a2">
@@ -314,12 +321,8 @@ export default function About() {
           <Button
             className="sparkle-text"
             style={{
-              fontSize: 14,
-              fontWeight: 600,
               backgroundColor: "#7453AF",
               borderRadius: "108px",
-              width: "134px",
-              height: "55px",
               color: "#FFFFFF",
               borderStyle: "none",
             }}
@@ -340,7 +343,7 @@ export default function About() {
                   className="card-img"
                   alt={expert.title}
                 />
-                <p className="card-title">{expert.title}</p>
+                <p className="about-card-title">{expert.title}</p>
               </div>
               <p className="card-desc">{expert.description}</p>
             </div>
@@ -382,15 +385,7 @@ export default function About() {
             What’s Our Client Opinion About{" "}
             <span className="highlight">Biz Craft</span>
           </p>
-          <p
-            style={{
-              color: "#FFFFFF",
-              fontSize: 24,
-              fontWeight: 500,
-              opacity: "80%",
-              marginBottom: "-10%",
-            }}
-          >
+          <p className="testimonials-client">
             Over 450<sup>+</sup> Satisfied Clients And Growing
           </p>
         </div>
@@ -465,7 +460,7 @@ export default function About() {
                       {testimonial.designation}
                     </p>
                   </div>
-                  <img src={quote} alt="quote" width="45px" height="40px" />
+                  <img src={quote} alt="quote" className="quote" />
                 </div>
               </div>
             ))}
@@ -479,17 +474,11 @@ export default function About() {
           <img src={works} className="works-image" alt="" />
 
           <Button
+            className="explore-portfolio-btn"
             style={{
-              position: "absolute",
-              zIndex: 1,
-              fontSize: 22,
-              fontWeight: 400,
               backgroundColor: "transparent",
               borderRadius: "8px",
-              width: "377px",
-              height: "70px",
               color: "#FFFFFF",
-              border: "1px solid #FFFFFF",
             }}
           >
             Explore Our Portfolio

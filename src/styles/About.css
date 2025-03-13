@@ -3,12 +3,26 @@
   margin: 3% 5% 0%;
   gap: 12%;
 }
+@media (max-width: 768px) {
+  .Container-a1 {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
 .Employee-img-1 {
   position: relative;
   width: 485px;
   height: 470px;
   margin-left: 15%;
   object-fit: cover;
+}
+@media (max-width: 768px) {
+  .Employee-img-1 {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+    margin-left: 0%;
+  }
 }
 .Employee-img-2 {
   position: absolute;
@@ -19,12 +33,33 @@
   right: 30%;
   margin-top: 50%;
 }
+@media (max-width: 768px) {
+  .Employee-img-2 {
+    bottom: -30%;
+    right: 15%;
+    margin-top: 0%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Employee-img {
+    order: 2;
+  }
+}
 .a1-content {
   margin-left: 5%;
   margin-top: 3%;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+@media (max-width: 768px) {
+  .a1-content {
+    order: 1;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .a1-title {
   font-size: 52px;
@@ -33,6 +68,13 @@
   width: 80%;
   margin-bottom: 0;
   line-height: 72.8px;
+}
+@media (max-width: 768px) {
+  .a1-title {
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+  }
 }
 .a1-highlight {
   color: #7453af;
@@ -43,6 +85,14 @@
   color: #ffffff;
   width: 90%;
   line-height: 28px;
+}
+@media (max-width: 768px) {
+  .a1-description {
+    font-size: 15px;
+    width: 100%;
+    line-height: 22px;
+    text-align: center;
+  }
 }
 .brand-container-a2 {
   background-color: #ffffff;
@@ -55,7 +105,12 @@
   position: relative;
   z-index: 1;
 }
-
+@media (max-width: 768px) {
+  .brand-container-a2 {
+    margin: 0% 0% 0px;
+    border-radius: 0%;
+  }
+}
 .brand-logo {
   object-fit: contain;
   max-width: 100%;
@@ -93,6 +148,13 @@
   margin-top: -5%;
   position: relative;
 }
+
+@media (max-width: 768px) {
+  .container-a2 {
+    flex-direction: column;
+    width: 100%;
+  }
+}
 .container-a2 img {
   position: absolute;
   width: 226px;
@@ -102,13 +164,34 @@
   left: 22%;
   transform: rotate(-16deg);
 }
+@media (max-width: 768px) {
+  .container-a2 img {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    border-width: 3px;
+    top: 20%;
+    left: 40%;
+    transform: rotate(-0deg);
+  }
+}
 .a2-content {
   width: 180%;
   margin-top: 6%;
 }
+@media (max-width: 768px) {
+  .a2-content {
+    width: 100%;
+  }
+}
 .a2-content-2 {
   width: 330%;
   margin-top: 5%;
+}
+@media (max-width: 768px) {
+  .a2-content-2 {
+    width: 100%;
+  }
 }
 .a2-title {
   font-weight: 600;
@@ -117,7 +200,12 @@
   letter-spacing: 0%;
   color: #ffffff;
 }
-
+@media (max-width: 768px) {
+  .a2-title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
 .a2-subtitle {
   font-weight: 600;
   font-size: 20px;
@@ -126,6 +214,12 @@
   color: #ffffff;
   text-transform: uppercase;
 }
+@media (max-width: 768px) {
+  .a2-subtitle {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+}
 .a2-description {
   font-weight: 400;
   font-size: 18px;
@@ -133,21 +227,46 @@
   color: #ffffff;
   opacity: 80%;
 }
+@media (max-width: 768px) {
+  .a2-description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
 .about-container-a3 {
   background-color: #11123d;
   display: flex;
-  padding: 5%;
   position: relative;
 }
-
+@media (max-width: 768px) {
+  .about-container-a3 {
+    flex-direction: column;
+  }
+}
 .about-image-a3 {
   width: 796px;
   height: 705px;
   object-fit: cover;
 }
-
+@media (max-width: 768px) {
+  .about-image-a3 {
+    width: 130%;
+    object-fit: cover;
+    margin-top: -30%;
+  }
+}
 .about-content-a3 {
   margin-top: 5%;
+}
+@media (max-width: 768px) {
+  .about-content-a3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -15%;
+    padding: 0% 5% 10%;
+  }
 }
 .about-title-a3 {
   font-size: 22px;
@@ -155,7 +274,13 @@
   letter-spacing: 15px;
   color: #7453af;
 }
-
+@media (max-width: 768px) {
+  .about-title-a3 {
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 10px;
+  }
+}
 .about-heading-a3 {
   font-size: 34px;
   font-weight: 700;
@@ -163,12 +288,28 @@
   width: 80%;
   line-height: 56px;
 }
+@media (max-width: 768px) {
+  .about-heading-a3 {
+    font-size: 24px;
+    text-align: center;
+    line-height: 36px;
+    width: 100%;
+  }
+}
 .about-description-a3 {
   font-size: 18px;
   font-weight: 400;
   color: #ffffff;
   opacity: 80%;
   line-height: 28px;
+}
+@media (max-width: 768px) {
+  .about-description-a3 {
+    font-size: 14px;
+    text-align: center;
+    line-height: 22px;
+    width: 100%;
+  }
 }
 .highlight-a3 {
   color: #7453af;
@@ -178,20 +319,45 @@
   flex-direction: column;
   gap: 10px;
 }
-
+@media (max-width: 768px) {
+  .about-list-a3 {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+}
 .about-item-a3 {
   display: flex;
   gap: 10px;
+}
+@media (max-width: 768px) {
+  .about-item-a3 {
+    gap: 6px;
+    width: 100%;
+    justify-content: center;
+    max-width: 400px;
+  }
 }
 .about-text-a3 {
   font-size: 20px;
   font-weight: 600;
   color: #ffffff;
 }
+@media (max-width: 768px) {
+  .about-text-a3 {
+    font-size: 16px;
+  }
+}
 .layer2-a3 {
   position: absolute;
   left: 38%;
   top: 50%;
+}
+@media (max-width: 768px) {
+  .layer2-a3 {
+    display: none;
+  }
 }
 .expert-heading {
   color: #ffffff;
@@ -200,16 +366,34 @@
   text-align: center;
   margin-top: 5%;
 }
+@media (max-width: 768px) {
+  .expert-heading {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10%;
+  }
+}
 .card-img {
   width: 115px !important;
   height: 123px !important;
 }
-.card-title {
+@media (max-width: 768px) {
+  .card-img {
+    width: 80px !important;
+    height: 85px !important;
+  }
+}
+.about-card-title {
   font-size: 26px;
   font-weight: 600;
   line-height: 36px;
   color: #ffffff !important;
   text-align: end;
+}
+@media (max-width: 768px) {
+  .about-card-title {
+    font-size: 20px;
+  }
 }
 .card {
   padding: 5%;
@@ -221,12 +405,23 @@
   width: 100%;
   gap: 30px;
 }
+@media (max-width: 768px) {
+  .card {
+    gap: 20px;
+  }
+}
 .card-desc {
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
   color: #ffffff;
   opacity: 80%;
+}
+@media (max-width: 768px) {
+  .card-desc {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 .grid-container {
   display: grid;
