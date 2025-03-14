@@ -350,22 +350,20 @@ export default function Home() {
           <p className="hero-description">
             Any successful approach starts with ideas and designs, and we
             collaborate with experts in this field.
-          </p>
-          <Button
-            className="sparkle-text"
-            style={{
-              fontSize: 14,
-              fontWeight: 600,
-              backgroundColor: "#7453AF",
-              borderRadius: "108px",
-              width: "134px",
-              height: "55px",
-              color: "#FFFFFF",
-              borderStyle: "none",
-            }}
-          >
-            GET STARTED
-          </Button>
+          </p>{" "}
+          <div className="button-container">
+            <Button
+              className="sparkle-text"
+              style={{
+                backgroundColor: "#7453AF",
+                borderRadius: "108px",
+                color: "#FFFFFF",
+                borderStyle: "none",
+              }}
+            >
+              GET STARTED
+            </Button>
+          </div>
           <div className="hero-stats" ref={statsTopRef}>
             <div className="stat-item">
               <p className="stat-label">WORKS DONE</p>
@@ -391,15 +389,6 @@ export default function Home() {
           <img src={img1} alt="cus" />
         </div>
       </div>
-
-      {/* <div className="brand-container">
-        <img src={img2} alt="" className="brand-logo small" />
-        <img src={img3} alt="" className="brand-logo small" />
-        <img src={img4} alt="" className="brand-logo large" />
-        <img src={img5} alt="" className="brand-logo large" />
-        <img src={img6} alt="" className="brand-logo small" />
-        <img src={img7} alt="" className="brand-logo large" />
-      </div> */}
 
       <div className="brand-container">
         <div className="brand-marquee">
@@ -427,7 +416,7 @@ export default function Home() {
           <p className="services-heading">
             We Provide Wide Range Of Digital Services
           </p>
-          <div style={{ width: "75%" }} className="carousel-hidden">
+          <div className="carousel-hidden carousel">
             <Carousel
               dotListClass="custom-dots"
               showDots={!isDesktop}
@@ -520,7 +509,6 @@ export default function Home() {
         <p className="technologies-title">TECHNOLOGIES</p>
         <p className="technologies-heading">Technologies We Work With</p>
 
-        {/* Category Buttons */}
         <div className="category-buttons">
           {categories.map((category) => (
             <button
@@ -535,13 +523,11 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Technologies Grid */}
         <div className="technologies-grid">
           {technologies[activeCategory].map((tech, index) => (
             <div
-              className="technology-card"
+              className={`technology-card ${index % 2 === 0 ? "" : "odd-card"}`}
               key={index}
-              style={{ marginTop: index % 2 === 0 ? "0px" : "4%" }}
             >
               <img
                 src={tech.icon}
@@ -565,7 +551,7 @@ export default function Home() {
         }
         className="about-container"
       >
-        <div className="layer2">
+        <div className="layer2-a3">
           <svg
             width="263"
             height="163"
@@ -586,24 +572,31 @@ export default function Home() {
             />
           </svg>
         </div>
-        <div>
-          <img src={img11} alt="" className="about-image" />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
+          <img src={img11} alt="" className="about-image-a3" />
         </div>
-        <div className="about-content">
-          <p className="about-title">ABOUT US</p>
-          <p className="about-heading">
+        <div className="about-content-a3">
+          <p className="about-title-a3">ABOUT US</p>
+          <p className="about-heading-a3">
             <span className="highlight">Biz Craft</span> A Smart Creative
             Digital Agency
           </p>
-          <p className="about-description">
+          <p className="about-description-a3">
             We are presenting to you an advanced range of digital solutions for
             businesses of all sizes. From branding to web development, we have
             the expertise and experience to help you achieve your business
             goals. Our team is dedicated to delivering innovative and effective
             ways that drive the online presence of your business.
           </p>
-          <div className="about-list">
-            <div className="about-item">
+          <div className="about-list-a3">
+            <div className="about-item-a3">
               <svg
                 width="23"
                 height="23"
@@ -616,9 +609,9 @@ export default function Home() {
                   fill="#7453AF"
                 />
               </svg>
-              <p className="about-text">Digital Creative Agency</p>
+              <p className="about-text-a3">Digital Creative Agency</p>
             </div>
-            <div className="about-item">
+            <div className="about-item-a3">
               <svg
                 width="23"
                 height="23"
@@ -631,9 +624,9 @@ export default function Home() {
                   fill="#7453AF"
                 />
               </svg>
-              <p className="about-text">Professional Problem Solutions</p>
+              <p className="about-text-a3">Professional Problem Solutions</p>
             </div>
-            <div className="about-item">
+            <div className="about-item-a3">
               <svg
                 width="23"
                 height="23"
@@ -646,20 +639,16 @@ export default function Home() {
                   fill="#7453AF"
                 />
               </svg>
-              <p className="about-text">Web Design & Development</p>
+              <p className="about-text-a3">Web Design & Development</p>
             </div>
           </div>
           <Button
             className="sparkle-text"
             style={{
-              fontSize: 14,
-              fontWeight: 600,
               backgroundColor: "#7453AF",
-              borderRadius: "108px",
-              width: "134px",
-              height: "55px",
               color: "#FFFFFF",
               borderStyle: "none",
+              borderRadius: "108px",
             }}
           >
             LEARN MORE
@@ -670,35 +659,22 @@ export default function Home() {
       <div className="technologies-container">
         <p className="technologies-title">INDUSTRIES</p>
         <p className="industries-heading">
-          Our Solutions Meet
-          <br /> The Digital Requirements Of These Industries
+          Our Solutions Meet The Digital Requirements Of These Industries
         </p>
         <div className="industries-grid">
           {industries.map((indus, index) => (
             <div
               key={index}
-              className="industry-card"
-              style={{
-                marginTop: index % 2 === 0 ? "0px" : "8%",
-              }}
+              className={`industry-card scroll-animate ${
+                index % 2 !== 0 ? "odd-industry" : ""
+              }`}
             >
               <img
                 src={indus.icon}
                 alt={indus.name}
                 className="industry-icon"
-                style={{ width: "50%", height: "auto" }}
               />
-              <p
-                className="industry-name"
-                style={{
-                  fontSize: 18,
-                  fontWeight: 400,
-                  color: "#FFFFFF",
-                  margin: 0,
-                }}
-              >
-                {indus.name}
-              </p>
+              <p className="industry-name">{indus.name}</p>
             </div>
           ))}
         </div>
@@ -738,15 +714,7 @@ export default function Home() {
             What’s Our Client Opinion About{" "}
             <span className="highlight">Biz Craft</span>
           </p>
-          <p
-            style={{
-              color: "#FFFFFF",
-              fontSize: 24,
-              fontWeight: 500,
-              opacity: "80%",
-              marginBottom: "-10%",
-            }}
-          >
+          <p className="testimonials-client">
             Over 450<sup>+</sup> Satisfied Clients And Growing
           </p>
         </div>
@@ -821,7 +789,7 @@ export default function Home() {
                       {testimonial.designation}
                     </p>
                   </div>
-                  <img src={quote} alt="quote" width="45px" height="40px" />
+                  <img src={quote} alt="quote" className="quote" />
                 </div>
               </div>
             ))}
@@ -856,23 +824,17 @@ export default function Home() {
         <Faq />
       </div>
 
-      <div>
+      <div className="work-section">
         <p className="faq-title">OUR WORKS</p>
         <div className="works-image-container">
           <img src={works} className="works-image" alt="" />
 
           <Button
+            className="explore-portfolio-btn"
             style={{
-              position: "absolute",
-              zIndex: 1,
-              fontSize: 22,
-              fontWeight: 400,
               backgroundColor: "transparent",
               borderRadius: "8px",
-              width: "377px",
-              height: "70px",
               color: "#FFFFFF",
-              border: "1px solid #FFFFFF",
             }}
           >
             Explore Our Portfolio

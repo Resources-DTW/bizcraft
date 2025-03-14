@@ -311,17 +311,19 @@ export default function Webdevelopment() {
             We create user-centric designs that are contemporary, engaging, and
             functional.
           </p>
-          <Button
-            className="sparkle-text"
-            style={{
-              backgroundColor: "#7453AF",
-              borderRadius: "108px",
-              color: "#FFFFFF",
-              borderStyle: "none",
-            }}
-          >
-            GET STARTED
-          </Button>
+          <div className="button-container">
+            <Button
+              className="sparkle-text"
+              style={{
+                backgroundColor: "#7453AF",
+                borderRadius: "108px",
+                color: "#FFFFFF",
+                borderStyle: "none",
+              }}
+            >
+              GET STARTED
+            </Button>
+          </div>
         </div>
         <div className="wdev-image">
           <img src={webdevelopment} alt="cus" />

@@ -237,10 +237,13 @@
   background-color: #11123d;
   display: flex;
   position: relative;
+  width: 100%;
 }
 @media (max-width: 768px) {
   .about-container-a3 {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 .about-image-a3 {
@@ -250,9 +253,10 @@
 }
 @media (max-width: 768px) {
   .about-image-a3 {
-    width: 130%;
+    width: 100%;
     object-fit: cover;
     margin-top: -30%;
+    padding-left: 15%;
   }
 }
 .about-content-a3 {

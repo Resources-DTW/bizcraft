@@ -255,7 +255,14 @@ export default function About() {
             />
           </svg>
         </div>
-        <div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
           <img src={img11} alt="" className="about-image-a3" />
         </div>
         <div className="about-content-a3">
