@@ -123,7 +123,6 @@
   .accordion
   .accordion-item
   .accordion-button:not(.collapsed)::after {
-  /* background-color: #fff; */
   color: #6b9c64;
 }
 .faq_section .accordion .accordion-item .accordion-button::after {
@@ -133,7 +132,6 @@
   background-position: center;
   position: absolute;
   right: 23px;
-  /* background-color: #6b9c64; */
   border-radius: 30px;
 }
 .faq_section .accordion .accordion-item .accordion-button::before {
