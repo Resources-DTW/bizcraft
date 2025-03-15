@@ -145,21 +145,19 @@ export default function UiUxDesign() {
             We create user-centric designs that are contemporary, engaging, and
             functional.
           </p>
-          <Button
-            className="sparkle-text"
-            style={{
-              fontSize: 14,
-              fontWeight: 600,
-              backgroundColor: "#7453AF",
-              borderRadius: "108px",
-              width: "134px",
-              height: "55px",
-              color: "#FFFFFF",
-              borderStyle: "none",
-            }}
-          >
-            GET STARTED
-          </Button>
+          <div className="button-container">
+            <Button
+              className="sparkle-text"
+              style={{
+                backgroundColor: "#7453AF",
+                borderRadius: "108px",
+                color: "#FFFFFF",
+                borderStyle: "none",
+              }}
+            >
+              GET STARTED
+            </Button>
+          </div>
         </div>
         <div className="uiux-image">
           <img src={uiuxdesign} alt="cus" />
@@ -167,12 +165,23 @@ export default function UiUxDesign() {
       </div>
 
       <div className="uiux-brand-container">
-        <img src={img2} alt="" className="brand-logo small" />
-        <img src={img3} alt="" className="brand-logo small" />
-        <img src={img4} alt="" className="brand-logo large" />
-        <img src={img5} alt="" className="brand-logo large" />
-        <img src={img6} alt="" className="brand-logo small" />
-        <img src={img7} alt="" className="brand-logo large" />
+        <div className="brand-marquee">
+          <div className="brand-track">
+            <img src={img2} alt="" className="brand-logo small" />
+            <img src={img3} alt="" className="brand-logo small" />
+            <img src={img4} alt="" className="brand-logo large" />
+            <img src={img5} alt="" className="brand-logo large" />
+            <img src={img6} alt="" className="brand-logo small" />
+            <img src={img7} alt="" className="brand-logo large" />
+
+            <img src={img2} alt="" className="brand-logo small" />
+            <img src={img3} alt="" className="brand-logo small" />
+            <img src={img4} alt="" className="brand-logo large" />
+            <img src={img5} alt="" className="brand-logo large" />
+            <img src={img6} alt="" className="brand-logo small" />
+            <img src={img7} alt="" className="brand-logo large" />
+          </div>
+        </div>
       </div>
 
       <div className="services-container">
@@ -183,177 +192,6 @@ export default function UiUxDesign() {
           <div>
             <img src={bizcraft} alt="" className="bizcraft-image" />
           </div>
-          {/* <div style={{ display: "flex", flexDirection: "column", gap: 50 }}>
-            <div style={{ display: "flex", gap: 30 }}>
-              <Card
-                style={{
-                  backgroundColor: "#FFFFFF14",
-                  borderRadius: "16px",
-                  width: "80%",
-                  height: "260px",
-                  borderStyle: "none",
-                }}
-              >
-                <img
-                  src={sound}
-                  width="60px"
-                  height="60px"
-                  alt=""
-                  style={{ marginTop: "-20%" }}
-                />
-                <p
-                  style={{
-                    fontSize: 20,
-                    fontWeight: 600,
-                    color: " #FFFFFF",
-                    width: "70%",
-                  }}
-                >
-                  Sound Strategies, Based On Research
-                </p>
-                <p
-                  style={{
-                    fontSize: 15,
-                    fontWeight: 400,
-                    color: " #FFFFFF",
-                    opacity: "80%",
-                    textTransform: "capitalize",
-                    lineHeight: "25px",
-                  }}
-                >
-                  We develop UX/UI strategies by analyzing your needs and
-                  challenges. Our designs benefit from an objective study of the
-                  product, users' aspirations, market segment, and the
-                  competition.
-                </p>
-              </Card>
-              <Card
-                style={{
-                  backgroundColor: "#FFFFFF14",
-                  borderRadius: "16px",
-                  width: "80%",
-                  height: "260px",
-                  borderStyle: "none",
-                }}
-              >
-                <img
-                  src={agility}
-                  width="60px"
-                  height="60px"
-                  alt=""
-                  style={{ marginTop: "-20%" }}
-                />
-                <p
-                  style={{
-                    fontSize: 20,
-                    fontWeight: 600,
-                    color: " #FFFFFF",
-                    width: "70%",
-                  }}
-                >
-                  Competence, Honed By Experience{" "}
-                </p>
-                <p
-                  style={{
-                    fontSize: 14,
-                    fontWeight: 400,
-                    color: " #FFFFFF",
-                    opacity: "80%",
-                    textTransform: "capitalize",
-                    lineHeight: "25px",
-                  }}
-                >
-                  Our experience spans diverse industries and client needs. We
-                  constantly update our skills to master modern trends and
-                  design techniques to whip up distinctive and innovative ideas.
-                </p>
-              </Card>
-            </div>
-            <div style={{ display: "flex", gap: 30 }}>
-              <Card
-                style={{
-                  backgroundColor: "#FFFFFF14",
-                  borderRadius: "16px",
-                  width: "80%",
-                  height: "260px",
-                  borderStyle: "none",
-                }}
-              >
-                <img
-                  src={commitment}
-                  width="60px"
-                  height="60px"
-                  alt=""
-                  style={{ marginTop: "-20%" }}
-                />
-                <p
-                  style={{
-                    fontSize: 20,
-                    fontWeight: 600,
-                    color: " #FFFFFF",
-                    width: "70%",
-                  }}
-                >
-                  Agility And Commitment
-                </p>
-                <p
-                  style={{
-                    fontSize: 14,
-                    fontWeight: 400,
-                    color: " #FFFFFF",
-                    opacity: "80%",
-                    textTransform: "capitalize",
-                    lineHeight: "25px",
-                  }}
-                >
-                  Our efforts are marked by diligence and commitment. Our
-                  agility and customer-oriented efforts turn client engagements
-                  into enduring relationships.
-                </p>
-              </Card>
-              <Card
-                style={{
-                  backgroundColor: "#FFFFFF14",
-                  borderRadius: "16px",
-                  width: "80%",
-                  height: "260px",
-                  borderStyle: "none",
-                }}
-              >
-                <img
-                  src={agility}
-                  width="60px"
-                  height="60px"
-                  alt=""
-                  style={{ marginTop: "-20%" }}
-                />
-                <p
-                  style={{
-                    fontSize: 20,
-                    fontWeight: 600,
-                    color: " #FFFFFF",
-                    width: "70%",
-                  }}
-                >
-                  Agility and Commitment
-                </p>
-                <p
-                  style={{
-                    fontSize: 14,
-                    fontWeight: 400,
-                    color: " #FFFFFF",
-                    opacity: "80%",
-                    textTransform: "capitalize",
-                    lineHeight: "25px",
-                  }}
-                >
-                  Our efforts are marked by diligence and commitment. Our
-                  agility and customer-oriented efforts turn client engagements
-                  into enduring relationships.
-                </p>
-              </Card>
-            </div>
-          </div> */}
           <div className="card-grid">
             {whyChooseData.map((item) => (
               <Card key={item.id} className="custom-card">
@@ -366,7 +204,7 @@ export default function UiUxDesign() {
         </div>
       </div>
 
-      <div className="timeline-container">
+      {/* <div className="timeline-container">
         <h2 className="timeline-title">Our UX/UI Design Approach</h2>
         <div className="timeline-wrapper">
           <div className="timeline-line"></div>
@@ -401,136 +239,10 @@ export default function UiUxDesign() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="uiux-container">
         <p className="wd-services-heading">Our UX/UI Design Approach</p>
-        {/* <div style={{ display: "flex", gap: 60, marginTop: "5%" }}>
-          <Card
-            style={{
-              backgroundColor: "#FFFFFF14",
-              borderRadius: "16px",
-              width: "80%",
-              // height: "230px",
-              borderStyle: "none",
-            }}
-          >
-            <img
-              src={analysis}
-              width="60px"
-              height="60px"
-              alt=""
-              style={{ marginTop: "-20%" }}
-            />
-            <p
-              style={{
-                fontSize: 20,
-                fontWeight: 600,
-                color: " #FFFFFF",
-                width: "70%",
-              }}
-            >
-              Performance Analysis
-            </p>
-            <p
-              style={{
-                fontSize: 15,
-                fontWeight: 400,
-                color: " #FFFFFF",
-                opacity: "80%",
-                textTransform: "capitalize",
-                lineHeight: "25px",
-              }}
-            >
-              Our experts start the process with an analysis of the current
-              website if you already have one. We evaluate how the content is
-              presented and the effectiveness of the UI elements.
-            </p>
-          </Card>
-          <Card
-            style={{
-              backgroundColor: "#FFFFFF14",
-              borderRadius: "16px",
-              width: "80%",
-              // height: "230px",
-              borderStyle: "none",
-            }}
-          >
-            <img
-              src={workshop}
-              width="60px"
-              height="60px"
-              alt=""
-              style={{ marginTop: "-20%" }}
-            />
-            <p
-              style={{
-                fontSize: 20,
-                fontWeight: 600,
-                color: " #FFFFFF",
-                width: "70%",
-              }}
-            >
-              Discovery Workshop
-            </p>
-            <p
-              style={{
-                fontSize: 14,
-                fontWeight: 400,
-                color: " #FFFFFF",
-                opacity: "80%",
-                textTransform: "capitalize",
-                lineHeight: "25px",
-              }}
-            >
-              We help you establish user expectations and requirements. With
-              this knowledge, we architect the website, aiming to address the
-              needs holistically.
-            </p>
-          </Card>
-          <Card
-            style={{
-              backgroundColor: "#FFFFFF14",
-              borderRadius: "16px",
-              width: "80%",
-              // height: "230px",
-              borderStyle: "none",
-            }}
-          >
-            <img
-              src={search}
-              width="60px"
-              height="60px"
-              alt=""
-              style={{ marginTop: "-20%" }}
-            />
-            <p
-              style={{
-                fontSize: 20,
-                fontWeight: 600,
-                color: " #FFFFFF",
-                width: "70%",
-              }}
-            >
-              Research and Strategy
-            </p>
-            <p
-              style={{
-                fontSize: 14,
-                fontWeight: 400,
-                color: " #FFFFFF",
-                opacity: "80%",
-                textTransform: "capitalize",
-                lineHeight: "25px",
-              }}
-            >
-              We conduct exhaustive research to understand the target users,
-              competitive strategies, and design trends in your industry. We
-              strategize to create a robust and impactful website that is
-              intelligible and credible.
-            </p>
-          </Card>
-        </div> */}
         <div className="uiux-card-container">
           {uiuxSteps.map((step) => (
             <Card key={step.id} className="uiux-card">
@@ -561,31 +273,25 @@ export default function UiUxDesign() {
         </Button>
       </div>
 
-      <div className="faq-container">
+      {/* <div className="faq-container">
         <p className="faq-title">FAQ</p>
         <p className="faq-heading">
           Find Answers For Commonly Asked Questions, Here
         </p>
         <Faq />
-      </div>
+      </div> */}
 
-      <div>
+      <div className="work-section">
         <p className="faq-title">OUR WORKS</p>
         <div className="works-image-container">
           <img src={works} className="works-image" alt="" />
 
           <Button
+            className="explore-portfolio-btn"
             style={{
-              position: "absolute",
-              zIndex: 1,
-              fontSize: 22,
-              fontWeight: 400,
               backgroundColor: "transparent",
               borderRadius: "8px",
-              width: "377px",
-              height: "70px",
               color: "#FFFFFF",
-              border: "1px solid #FFFFFF",
             }}
           >
             Explore Our Portfolio

@@ -35,6 +35,13 @@
   object-fit: cover;
   margin-top: -5%;
 }
+@media (max-width: 768px) {
+  .service-image img {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+  }
+}
 .wd-brand-container {
   background-color: #ffffff;
   border-radius: 16px;
@@ -62,7 +69,7 @@
 @media (max-width: 768px) {
   .wd-services-heading {
     font-size: 24px;
-    line-height: 56px;
+    line-height: 36px;
     text-align: center;
   }
 }

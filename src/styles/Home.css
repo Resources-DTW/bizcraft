@@ -521,7 +521,6 @@
   color: #ffffff;
   margin: 0;
 }
-
 .service-list {
   color: #ffffff;
   list-style-type: disc;
@@ -529,7 +528,6 @@
   flex-direction: column;
   gap: 10px;
 }
-
 .service-item {
   font-size: 14px;
   font-weight: 400;

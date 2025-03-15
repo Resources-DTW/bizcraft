@@ -7,7 +7,9 @@
 }
 @media (max-width: 768px) {
   .faq-content {
-    padding: 5% 3%;
+    padding-left: 4% !important;
+    padding-right: 8% !important;
+    width: auto !important;
   }
 }
 .row {
@@ -19,6 +21,11 @@
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
   /* width: 700px; */
+}
+@media (max-width: 768px) {
+  .row {
+    width: 220% !important;
+  }
 }
 .container {
   width: 100%;
@@ -78,6 +85,16 @@
   width: 400%;
   /* border: 8px solid #377dff; */
   border-bottom: none;
+}
+@media (max-width: 768px) {
+  .faq_section .accordion .accordion-item .accordion-button {
+    border-radius: 16px;
+    padding: 24px 45px 24px 24px;
+    font-weight: 500;
+    font-size: 24px;
+    width: 100%;
+    border-bottom: none;
+  }
 }
 .faq_section .accordion .accordion-item .accordion-button.collapsed {
   /* border: 8px solid rgba(55, 125, 255, 0.3); */
@@ -154,6 +171,13 @@
   /* border: 8px solid #377dff; */
   border-top: none;
   background-color: #ffffff;
+}
+@media (max-width: 768px) {
+  .faq_section .accordion .accordion-item .accordion-collapse {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 20px;
+    width: 100%;
+  }
 }
 .faq_section
   .accordion

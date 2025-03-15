@@ -237,21 +237,19 @@ export default function WebDesign() {
             Any successful approach starts with ideas and designs, and we
             collaborate with experts in this field.
           </p>
-          <Button
-            className="sparkle-text"
-            style={{
-              fontSize: 14,
-              fontWeight: 600,
-              backgroundColor: "#7453AF",
-              borderRadius: "108px",
-              width: "134px",
-              height: "55px",
-              color: "#FFFFFF",
-              borderStyle: "none",
-            }}
-          >
-            GET STARTED
-          </Button>
+          <div className="button-container">
+            <Button
+              className="sparkle-text"
+              style={{
+                backgroundColor: "#7453AF",
+                borderRadius: "108px",
+                color: "#FFFFFF",
+                borderStyle: "none",
+              }}
+            >
+              GET STARTED
+            </Button>
+          </div>
         </div>
         <div className="service-image">
           <img src={serviceimg} alt="cus" />
@@ -259,12 +257,23 @@ export default function WebDesign() {
       </div>
 
       <div className="wd-brand-container">
-        <img src={img2} alt="" className="brand-logo small" />
-        <img src={img3} alt="" className="brand-logo small" />
-        <img src={img4} alt="" className="brand-logo large" />
-        <img src={img5} alt="" className="brand-logo large" />
-        <img src={img6} alt="" className="brand-logo small" />
-        <img src={img7} alt="" className="brand-logo large" />
+        <div className="brand-marquee">
+          <div className="brand-track">
+            <img src={img2} alt="" className="brand-logo small" />
+            <img src={img3} alt="" className="brand-logo small" />
+            <img src={img4} alt="" className="brand-logo large" />
+            <img src={img5} alt="" className="brand-logo large" />
+            <img src={img6} alt="" className="brand-logo small" />
+            <img src={img7} alt="" className="brand-logo large" />
+
+            <img src={img2} alt="" className="brand-logo small" />
+            <img src={img3} alt="" className="brand-logo small" />
+            <img src={img4} alt="" className="brand-logo large" />
+            <img src={img5} alt="" className="brand-logo large" />
+            <img src={img6} alt="" className="brand-logo small" />
+            <img src={img7} alt="" className="brand-logo large" />
+          </div>
+        </div>
       </div>
 
       <div className="services-container">
@@ -312,7 +321,6 @@ export default function WebDesign() {
         <p className="technologies-title">TECHNOLOGIES</p>
         <p className="technologies-heading">Technologies We Work With</p>
 
-        {/* Category Buttons */}
         <div className="category-buttons">
           {categories.map((category) => (
             <button
@@ -327,13 +335,11 @@ export default function WebDesign() {
           ))}
         </div>
 
-        {/* Technologies Grid */}
         <div className="technologies-grid">
           {technologies[activeCategory].map((tech, index) => (
             <div
-              className="technology-card"
               key={index}
-              style={{ marginTop: index % 2 === 0 ? "0px" : "4%" }}
+              className={`technology-card ${index % 2 === 0 ? "" : "odd-card"}`}
             >
               <img
                 src={tech.icon}
@@ -349,17 +355,15 @@ export default function WebDesign() {
       <div className="industries-container">
         <p className="technologies-title">INDUSTRIES</p>
         <p className="industries-heading">
-          Our Solutions Meet
-          <br /> The Digital Requirements Of These Industries
+          Our Solutions Meet The Digital Requirements Of These Industries
         </p>
         <div className="industries-grid">
           {industries.map((indus, index) => (
             <div
               key={index}
-              className="industry-card scroll-animate"
-              style={{
-                marginTop: index % 2 === 0 ? "0px" : "8%",
-              }}
+              className={`industry-card scroll-animate ${
+                index % 2 !== 0 ? "odd-industry" : ""
+              }`}
             >
               <img
                 src={indus.icon}
@@ -379,15 +383,7 @@ export default function WebDesign() {
             What’s Our Client Opinion About{" "}
             <span className="highlight">Biz Craft</span>
           </p>
-          <p
-            style={{
-              color: "#FFFFFF",
-              fontSize: 24,
-              fontWeight: 500,
-              opacity: "80%",
-              marginBottom: "-10%",
-            }}
-          >
+          <p className="testimonials-client">
             Over 450<sup>+</sup> Satisfied Clients And Growing
           </p>
         </div>
