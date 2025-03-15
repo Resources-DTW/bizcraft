@@ -293,16 +293,7 @@ export default function Webdevelopment() {
       <Header />
       <div className="hero-container">
         <div className="hero-content">
-          <p
-            style={{
-              fontSize: 20,
-              fontWeight: 600,
-              color: "#7453AF",
-              margin: 0,
-            }}
-          >
-            Services . Web Develop Service
-          </p>
+          <p className="service-text">Services . Web Develop Service</p>
           <p className="wd-title">
             Elevate Customer Engagement With{" "}
             <span className="highlight">Immersive Designs</span>

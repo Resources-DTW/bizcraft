@@ -127,16 +127,7 @@ export default function UiUxDesign() {
       <Header />
       <div className="hero-container">
         <div className="hero-content">
-          <p
-            style={{
-              fontSize: 20,
-              fontWeight: 600,
-              color: "#7453AF",
-              margin: 0,
-            }}
-          >
-            Services . User Experience Design
-          </p>
+          <p className="service-text">Services . User Experience Design</p>
           <p className="wd-title">
             Elevate Customer Engagement With{" "}
             <span className="highlight">Immersive Designs</span>
