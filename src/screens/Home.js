@@ -649,6 +649,7 @@ export default function Home() {
               color: "#FFFFFF",
               borderStyle: "none",
               borderRadius: "108px",
+              marginTop: "5%",
             }}
           >
             LEARN MORE

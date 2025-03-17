@@ -6,6 +6,9 @@ import headerlogo from "../assests/headerlogo.png";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { AiOutlineMenu } from "react-icons/ai";
+import hamburger from "../assests/hamburger.png";
+import text from "../assests/text.png";
 
 export default function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
@@ -67,7 +70,19 @@ export default function Header() {
 
       {isMobile && (
         <div className="menu-icon" onClick={toggleMenu}>
-          {menuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
+          {menuOpen ? (
+            <FaTimes size={30} />
+          ) : (
+            <img
+              src={text}
+              alt="hamburger"
+              // style={{
+              //   width: "30px",
+              //   height: "30px",
+              //   filter: "brightness(1) invert(1)",
+              // }}
+            />
+          )}
         </div>
       )}
 
